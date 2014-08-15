@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
-import javax.persistence.CascadeType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -22,6 +21,7 @@ public abstract class ItemBase {
 	private ItemStatus status;
 	private List<Message> messages;
 	private User publisher;
+	private boolean isDelete;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -88,6 +88,11 @@ public abstract class ItemBase {
 		return publisher;
 	}
 
+	@Column(name = "item_deleted",nullable=false)
+	public boolean getIsDelete() {
+		return isDelete;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -134,5 +139,9 @@ public abstract class ItemBase {
 
 	public void setPublisher(User publisher) {
 		this.publisher = publisher;
+	}
+
+	public void setIsDelete(boolean isDelete) {
+		this.isDelete = isDelete;
 	}
 }
