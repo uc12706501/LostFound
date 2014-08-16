@@ -11,17 +11,22 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 		DaoBase<T> {
 	protected HibernateTemplate hibernateTemplate = getHibernateTemplate();
 
-	public void save(T entity) {
-		getHibernateTemplate().save(entity);
+	public T get(long entityId) {
+		return (T) hibernateTemplate.get(getEntityClass(), entityId);
+	}
+
+	public void update(T entity) {
+		hibernateTemplate.update(entity);
+	}
+
+	public Integer save(T entity) {
+		return (Integer) getHibernateTemplate().save(entity);
 	}
 
 	public void delete(long entityId) {
 		hibernateTemplate.delete(get(entityId));
 	}
 
-	public T get(long entityId) {
-		return (T) hibernateTemplate.get(getEntityClass(), entityId);
-	}
 
 	public List<T> getAll() {
 		return null;
