@@ -27,9 +27,8 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 		hibernateTemplate.delete(get(entityId));
 	}
 
-
 	public List<T> getAll() {
-		return null;
+		return hibernateTemplate.find("find " + getEntityClassName());
 	}
 
 	public List<T> getPartial(int pageSize, int pageIndex) {
@@ -38,6 +37,10 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 
 	public List<T> Query(String queryString) {
 		return null;
+	}
+
+	protected String getEntityClassName() {
+		return getEntityClass().getName();
 	}
 
 	abstract Class getEntityClass();
