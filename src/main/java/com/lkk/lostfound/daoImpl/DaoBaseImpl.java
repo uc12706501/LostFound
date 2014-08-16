@@ -28,7 +28,6 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 	}
 
 	public List<T> getAll() {
-		return null;
 		return hibernateTemplate.find("find " + getEntityClassName());
 	}
 
