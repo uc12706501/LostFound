@@ -7,6 +7,9 @@ import com.lkk.lostfound.model.User;
 
 public class UserDaoImpl extends DaoBaseImpl<User> implements UserDao {
 
-	
+	@Override
+	Class getEntityClass() {
 
+		return User.class;
+	}
 }
