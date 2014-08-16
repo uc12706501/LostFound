@@ -29,10 +29,10 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 
 	public List<T> getAll() {
 <<<<<<< HEAD
-		return hibernateTemplate.find("find " + getEntityClassName());
 =======
 		return null;
->>>>>>> 265b375088fd1b0451c6db991539ff2cc8b5f2b2
+>>>>>>> b83238f0543adccb7a5efca1179e1256b4dc9892
+		return hibernateTemplate.find("find " + getEntityClassName());
 	}
 
 	public List<T> getPartial(int pageSize, int pageIndex) {
@@ -41,13 +41,10 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 
 	public List<T> Query(String queryString) {
 		return null;
-<<<<<<< HEAD
 	}
 
 	protected String getEntityClassName() {
 		return getEntityClass().getName();
-=======
->>>>>>> 265b375088fd1b0451c6db991539ff2cc8b5f2b2
 	}
 
 	abstract Class getEntityClass();
