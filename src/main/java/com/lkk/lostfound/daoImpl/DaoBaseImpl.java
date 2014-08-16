@@ -24,8 +24,7 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 	}
 
 	public List<T> getAll() {
-		String query = "FROM " + getEntityClass().getName();
-		return (List<T>) hibernateTemplate.find(query);
+		return null;
 	}
 
 	public List<T> getPartial(int pageSize, int pageIndex) {
@@ -33,7 +32,7 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 	}
 
 	public List<T> Query(String queryString) {
-		return hibernateTemplate.find(queryString);
+		return null;
 	}
 
 	abstract Class getEntityClass();
