@@ -47,7 +47,7 @@
 
 	<div id="wrapper">
 
-		<!-- Navigation -->
+		<!-- 顶部导航条 -->
 		<nav class="navbar navbar-default navbar-static-top" role="navigation"
 			style="margin-bottom: 0">
 			<div class="navbar-header">
@@ -95,6 +95,12 @@
 						</li>
 						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
 								<s:text name="admin.sidebar.dashboard"></s:text></a></li>
+						<li><a href="#"><i class="fa fa-plus fa-fw"></i> <s:text
+									name="admin.nav.Announcement"></s:text><span class="fa arrow"></span>
+						</a>
+							<ul class="nav nav-second-level">
+								<li><a href="#"><s:text name="admin.nav.addAnno"></s:text></a></li>
+							</ul></li>
 						<li><a href="#"><i class="fa fa-briefcase fa-fw"></i> <s:text
 									name="admin.nav.LostItemManage" /><span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
@@ -103,8 +109,8 @@
 								<li><a href="morris.html"><s:text
 											name="admin.nav.LostItemNotFound"></s:text></a></li>
 							</ul> <!-- /.nav-second-level --></li>
-						<li><a href="#"><i class="fa fa-group fa-fw"></i>
-							<s:text name="admin.nav.PickedItemManage"></s:text><span
+						<li><a href="#"><i class="fa fa-group fa-fw"></i> <s:text
+									name="admin.nav.PickedItemManage"></s:text><span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="#"><s:text name="admin.nav.OwnerNotFound"></s:text></a></li>
@@ -136,9 +142,7 @@
 				<div class="col-lg-12">
 					<h1 class="page-header">Blank</h1>
 				</div>
-				<!-- /.col-lg-12 -->
 			</div>
-			<!-- /.row -->
 			<div class="row">
 				<div class="col-lg-12">
 					<decorator:body />

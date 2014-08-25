@@ -31,6 +31,7 @@
 				<value>com.lkk.lostfound.model.Message</value>
 				<value>com.lkk.lostfound.model.User</value>
 				<value>com.lkk.lostfound.model.PickedItem</value>
+				<value>com.lkk.lostfound.model.Announcement</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
