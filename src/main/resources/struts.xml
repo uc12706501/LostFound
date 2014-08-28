@@ -5,8 +5,6 @@
 
 <struts>
 
-	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
-
 	<package name="myPackage" extends="struts-default">
 
 		<default-action-ref name="index" />
@@ -22,11 +20,19 @@
 
 	</package>
 
-	<package namespace="/admin" name="adminHome" extends="struts-default">
+	<package name="adminHome" namespace="/admin" extends="struts-default">
 		<default-action-ref name="index"></default-action-ref>
 		<action name="index">
-			<result>/jsp/adminIndex.jsp</result>
+			<result name="success">/WEB-INF/jsp/admin/index.jsp</result>
 		</action>
 	</package>
+
+<!-- 	<package name="adminAnno" namespace="/admin/anno" extends="struts-default"> -->
+<!-- 		<action name="index" -->
+<!-- 			class="com.lkk.lostfound.action.admin.announcement.IndexAction"> -->
+<!-- 			<result name="success">/WEB-INF/jsp/admin/announcement/index.jsp -->
+<!-- 			</result> -->
+<!-- 		</action> -->
+<!-- 	</package> -->
 
 </struts>
