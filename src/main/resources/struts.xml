@@ -27,12 +27,4 @@
 		</action>
 	</package>
 
-<!-- 	<package name="adminAnno" namespace="/admin/anno" extends="struts-default"> -->
-<!-- 		<action name="index" -->
-<!-- 			class="com.lkk.lostfound.action.admin.announcement.IndexAction"> -->
-<!-- 			<result name="success">/WEB-INF/jsp/admin/announcement/index.jsp -->
-<!-- 			</result> -->
-<!-- 		</action> -->
-<!-- 	</package> -->
-
 </struts>
