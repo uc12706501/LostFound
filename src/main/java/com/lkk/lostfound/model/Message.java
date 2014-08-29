@@ -15,6 +15,7 @@ public class Message {
 
 	@Id
 	@Column(name = "message_id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}

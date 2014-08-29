@@ -49,8 +49,8 @@
 			<!-- /.navbar-header -->
 			<ul class="nav navbar-top-links navbar-right">
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> <i
-						class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+					data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
 				</a>
 					<ul class="dropdown-menu dropdown-user">
 						<li><a href="#"><i class="fa fa-user fa-fw"></i> <s:text
@@ -68,8 +68,8 @@
 						<li class="sidebar-search">
 							<div class="input-group custom-search-form">
 								<input type="text" class="form-control"
-									placeholder="<s:text name='admin.text.search'/>">
-								<span class="input-group-btn">
+									placeholder="<s:text name='admin.text.search'/>"> <span
+									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
 									</button>
@@ -79,14 +79,15 @@
 						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
 								<s:text name="admin.sidebar.dashboard"></s:text></a></li>
 						<li><a href="#"><i class="fa fa-plus fa-fw"></i> <s:text
-									name="admin.nav.Announcement"></s:text><span
-								class="fa arrow"></span> </a>
+									name="admin.nav.Announcement"></s:text><span class="fa arrow"></span>
+						</a>
 							<ul class="nav nav-second-level">
-								<li><a href="#"><s:text name="admin.nav.addAnno"></s:text></a></li>
+								<li><a
+									href='<s:url action="create" namespace="/admin/announcement"></s:url>'><s:text
+											name="admin.nav.addAnno"></s:text></a></li>
 							</ul></li>
 						<li><a href="#"><i class="fa fa-briefcase fa-fw"></i> <s:text
-									name="admin.nav.LostItemManage" /><span
-								class="fa arrow"></span></a>
+									name="admin.nav.LostItemManage" /><span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="flot.html"><s:text
 											name="admin.nav.LostItemFound"></s:text></a></li>
@@ -123,7 +124,9 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Blank</h1>
+					<h1 class="page-header">
+						<s:property value="#title" default="Blank Title"></s:property>
+					</h1>
 				</div>
 			</div>
 			<div class="row">

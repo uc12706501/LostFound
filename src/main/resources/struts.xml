@@ -5,6 +5,7 @@
 
 <struts>
 
+	<!-- Index -->
 	<package name="myPackage" extends="struts-default">
 
 		<default-action-ref name="index" />
@@ -20,11 +21,38 @@
 
 	</package>
 
-	<package name="adminHome" namespace="/admin" extends="struts-default">
-		<default-action-ref name="index"></default-action-ref>
+	<!-- Admin Home -->
+	<package name="admin-home" namespace="/admin" extends="struts-default">
 		<action name="index">
 			<result name="success">/WEB-INF/jsp/admin/index.jsp</result>
 		</action>
+
 	</package>
 
+	<!-- Admin Announcement -->
+	<package name="admin-anno" namespace="/admin/announcement"
+		extends="struts-default">
+		<default-interceptor-ref name="paramsPrepareParamsStack">
+		</default-interceptor-ref>
+
+		<action name="index"
+			class="com.lkk.lostfound.action.admin.announcement.IndexAction">
+			<result name="success">/WEB-INF/jsp/admin/announcement/index.jsp
+			</result>
+		</action>
+
+		<action name="create"
+			class="com.lkk.lostfound.action.admin.announcement.CreateAction">
+			<result name="input">/WEB-INF/jsp/admin/announcement/create.jsp
+			</result>
+		</action>
+
+		<action name="confirmCreate"
+			class="com.lkk.lostfound.action.admin.announcement.CreateAction"
+			method="confirm">
+			<result type="redirectAction">index</result>
+			<result name="input">/WEB-INF/jsp/admin/announcement/create.jsp
+			</result>
+		</action>
+	</package>
 </struts>

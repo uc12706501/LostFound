@@ -6,7 +6,7 @@ public interface DaoBase<T> {
 
 	T get(long entityId);
 
-	Integer save(T entity);
+	Long save(T entity);
 
 	void update(T entity);
 

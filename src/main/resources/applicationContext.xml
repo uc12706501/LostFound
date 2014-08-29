@@ -44,4 +44,13 @@
 			</props>
 		</property>
 	</bean>
+
+	<bean name="announcementDao" class="com.lkk.lostfound.daoImpl.AnnouncementDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+
+	<bean name="anno-create"
+		class="com.lkk.lostfound.action.admin.announcement.CreateAction">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
 </beans>
