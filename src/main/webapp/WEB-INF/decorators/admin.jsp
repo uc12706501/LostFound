@@ -83,6 +83,9 @@
 						</a>
 							<ul class="nav nav-second-level">
 								<li><a
+									href='<s:url action="index" namespace="/admin/announcement"></s:url>'><s:text
+											name="admin.nav.annoIndex"></s:text></a></li>
+								<li><a
 									href='<s:url action="create" namespace="/admin/announcement"></s:url>'><s:text
 											name="admin.nav.addAnno"></s:text></a></li>
 							</ul></li>
