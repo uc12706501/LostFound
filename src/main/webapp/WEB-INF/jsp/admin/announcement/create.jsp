@@ -1,8 +1,8 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<
+
 <s:head />
 
-<s:set var="title" value="%{getText('admin.anno.index.title')}" />
+<s:set var="title" value="%{getText('admin.anno.create.title')}" />
 
 <s:form cssClass="form-horizontal" role="form" action="confirmCreate"
 	theme="simple">
@@ -22,7 +22,8 @@
 				name="admin.anno.dispaly"></s:text></label>
 		<div class="col-sm-6">
 			<div class="checkbox">
-				<label> <s:checkbox name="display" cssStyle="position:relative;"></s:checkbox></label>
+				<label> <s:checkbox name="display"
+						cssStyle="position:relative;"></s:checkbox></label>
 			</div>
 		</div>
 	</div>
