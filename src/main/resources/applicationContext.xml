@@ -53,4 +53,8 @@
 		class="com.lkk.lostfound.action.admin.announcement.CreateAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
+	<bean name="anno-index"
+		class="com.lkk.lostfound.action.admin.announcement.IndexAction">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
 </beans>
