@@ -25,7 +25,10 @@ public class CreateAction extends AnnouncementActionBase implements
 	@Validations(visitorFields = { @VisitorFieldValidator(fieldName = "model", message = "Default Message", appendPrefix = false) })
 	public String confirm() throws Exception {
 		if (!StringUtils.isNullOrEmpty(model.getImageUrl())) {
-			announcementDao.save(model);
+			if (model.getId() == 0)
+				announcementDao.save(model);
+			else
+				announcementDao.update(model);
 			return SUCCESS;
 		}
 		return INPUT;
