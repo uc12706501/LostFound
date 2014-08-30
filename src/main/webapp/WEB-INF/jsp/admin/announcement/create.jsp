@@ -1,4 +1,6 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
+<
+<s:head />
 
 <s:set var="title" value="%{getText('admin.anno.index.title')}" />
 
@@ -11,14 +13,17 @@
 			<s:textfield name="imageUrl" cssClass="form-control" />
 		</div>
 		<div class="col-sm-4">
-			<s:fielderror fieldName="imageUrl"></s:fielderror>
+			<label style="padding-top: 7px;"> <s:fielderror
+					fieldName="imageUrl"></s:fielderror></label>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="col-sm-2 control-label"><s:text
 				name="admin.anno.dispaly"></s:text></label>
 		<div class="col-sm-6">
-			<s:checkbox name="display"></s:checkbox>
+			<div class="checkbox">
+				<label> <s:checkbox name="display" cssStyle="position:relative;"></s:checkbox></label>
+			</div>
 		</div>
 	</div>
 	<div class="form-group">
