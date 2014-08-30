@@ -2,22 +2,19 @@ package com.lkk.lostfound.action.admin.announcement;
 
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
-import com.lkk.lostfound.dao.AnnouncementDao;
 import com.lkk.lostfound.model.Announcement;
 import com.lkk.lostfound.utils.StringUtils;
-import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
 
 @SuppressWarnings("serial")
-public class CreateAction extends ActionSupport implements
+public class CreateAction extends AnnouncementActionBase implements
 		ModelDriven<Announcement>, Preparable {
 
 	private Announcement model;
 	private Long announcementId;
-	private AnnouncementDao announcementDao;
 
 	@Override
 	@SkipValidation
@@ -56,14 +53,6 @@ public class CreateAction extends ActionSupport implements
 
 	public void setAnnouncementId(long announcementId) {
 		this.announcementId = announcementId;
-	}
-
-	public AnnouncementDao getAnnouncementDao() {
-		return announcementDao;
-	}
-
-	public void setAnnouncementDao(AnnouncementDao announcementDao) {
-		this.announcementDao = announcementDao;
 	}
 
 }
