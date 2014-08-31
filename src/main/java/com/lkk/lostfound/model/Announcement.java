@@ -2,12 +2,13 @@ package com.lkk.lostfound.model;
 
 import javax.persistence.*;
 
+import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 
 @Entity
 public class Announcement {
 	private long id;
-	private String imageUrl;
+	private byte[] image;
 	private Boolean display;
 
 	@Id
@@ -18,8 +19,9 @@ public class Announcement {
 	}
 
 	@Column(name = "announcement_image", nullable = false)
-	public String getImageUrl() {
-		return imageUrl;
+	@Lob
+	public byte[] getImage() {
+		return image;
 	}
 
 	@Column(name = "announcement_display")
@@ -35,8 +37,8 @@ public class Announcement {
 		this.display = display;
 	}
 
-	@RequiredStringValidator(shortCircuit = true, key = "validate.required")
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	// @RequiredFieldValidator(key = "validate.required")
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 }

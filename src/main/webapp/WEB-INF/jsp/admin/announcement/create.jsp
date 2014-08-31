@@ -5,12 +5,12 @@
 <s:set var="title" value="%{getText('admin.anno.create.title')}" />
 
 <s:form cssClass="form-horizontal" role="form" action="confirmCreate"
-	theme="simple">
+	method="post" enctype="multipart/form-data" theme="simple">
 	<div class="form-group">
 		<label class="col-sm-2 control-label"><s:text
 				name="admin.anno.picUrl"></s:text></label>
 		<div class="col-sm-6">
-			<s:textfield name="imageUrl" cssClass="form-control" />
+			<s:file name="upload"></s:file>
 		</div>
 		<div class="col-sm-4">
 			<label style="padding-top: 7px;"> <s:fielderror
