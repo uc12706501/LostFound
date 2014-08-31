@@ -54,5 +54,13 @@
 			<result name="input">/WEB-INF/jsp/admin/announcement/create.jsp
 			</result>
 		</action>
+
+		<action name="getImage"
+			class="com.lkk.lostfound.action.admin.announcement.GetImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
 	</package>
 </struts>

@@ -15,7 +15,10 @@
 				<td><s:property value="id"></s:property></td>
 				<td><input type="checkbox" disabled="disabled"
 					<s:if test="%{#anno.display==true}">checked</s:if>></input></td>
-				<td><s:property value="imageUrl"></s:property></td>
+				<td><s:url action="getImage" namespace="/admin/announcement"
+						var="imageLink">
+						<s:param name="announcementId" value="%{#anno.id}" />
+					</s:url> <img alt="anno pic" src='<s:property value="#imageLink"/>'></td>
 				<td><s:url action="create" namespace="/admin/announcement"
 						var="link">
 						<s:param name="announcementId" value="%{#anno.id}" />

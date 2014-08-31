@@ -57,4 +57,8 @@
 		class="com.lkk.lostfound.action.admin.announcement.IndexAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
+	<bean name="anno-getImage"
+		class="com.lkk.lostfound.action.admin.announcement.GetImageAction">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
 </beans>
