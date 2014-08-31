@@ -12,11 +12,7 @@ import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
 
 @SuppressWarnings("serial")
-public class CreateAction extends AnnouncementActionBase implements
-		ModelDriven<Announcement>, Preparable {
-
-	private Announcement model;
-	private Long announcementId;
+public class CreateAction extends SingleAnnouncementActionBase {
 
 	private File upload;
 	private String uploadFileName;
@@ -38,31 +34,8 @@ public class CreateAction extends AnnouncementActionBase implements
 				announcementDao.update(model);
 			return SUCCESS;
 		}
+		addFieldError("upload", "请选择文件");
 		return INPUT;
-	}
-
-	// implement of ModelDriven
-	public Announcement getModel() {
-		return model;
-	}
-
-	// implement of Preparable
-	public void prepare() throws Exception {
-
-		if (announcementId == null
-				|| announcementDao.get(getAnnouncementId()) == null)
-			model = new Announcement();
-		else
-			model = announcementDao.get(getAnnouncementId());
-	}
-
-	// getter and setter
-	public long getAnnouncementId() {
-		return announcementId;
-	}
-
-	public void setAnnouncementId(long announcementId) {
-		this.announcementId = announcementId;
 	}
 
 	public void setUpload(File upload) {
