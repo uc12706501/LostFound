@@ -14,6 +14,9 @@
 	<decorator name="admin" page="admin.jsp">
 		<pattern>/admin/*</pattern>
 	</decorator>
+	<decorator name="main-base" page="main-base.jsp">
+		<pattern>/user/*</pattern>
+	</decorator>
 	<decorator name="main" page="main.jsp">
 		<pattern>/*</pattern>
 	</decorator>

@@ -5,20 +5,19 @@
 
 <struts>
 
-	<!-- Index -->
-	<package name="myPackage" extends="struts-default">
-
-		<default-action-ref name="index" />
-
-		<action name="index" class="com.lkk.lostfound.IndexAction">
-			<result>/jsp/index.jsp</result>
+	<!-- Home -->
+	<package name="home" namespace="/" extends="struts-default">
+		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+		<action name="index" class="com.lkk.lostfound.action.home.IndexAction">
+			<result name="success">/WEB-INF/jsp/index.jsp</result>
 		</action>
+	</package>
 
-		<action name="helloWorld" class="helloWorldAction">
-			<result name="input">/jsp/index.jsp</result>
-			<result>/jsp/helloWorld.jsp</result>
+	<package name="user" namespace="/user" extends="struts-default">
+		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+		<action name="logon">
+			<result name="success">/WEB-INF/jsp/user/logon.jsp</result>
 		</action>
-
 	</package>
 
 	<!-- Admin Home -->
