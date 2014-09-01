@@ -14,6 +14,9 @@
 	rel="stylesheet">
 <link href='<s:url value="/styles/css/lighter.css"></s:url>'
 	rel="stylesheet">
+<link
+	href='<s:url value='/styles/font-awesome-4.1.0/css/font-awesome.min.css'></s:url>'
+	rel="stylesheet" type="text/css">
 <decorator:head></decorator:head>
 </head>
 <body>

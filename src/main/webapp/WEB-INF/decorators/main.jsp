@@ -1,87 +1,118 @@
-<!DOCTYPE html PUBLIC
-	"-//W3C//DTD XHTML 1.1 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="decorator"
+	uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
-<%@taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page" %>
-<%@taglib prefix="s" uri="/struts-tags" %>
+<page:applyDecorator name="main-base">
+	<head>
+<decorator:head></decorator:head>
+	</head>
+	<body>
+		<!-- 滚动图片 -->
+		<div class="container-alternate" id="top" style="background:#EF9C21;">
+			<div class="container">
+				<div class="carousel slide" data-ride="carousel" id="myCarousel">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN">
-<head>
-	<meta charset="utf-8">
-	<title><decorator:title default="Struts Starter"/></title>
-    <link href="<s:url value='/styles/main.css'/>" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<s:url value='/struts/niftycorners/niftyCorners.css'/>" rel="stylesheet" type="text/css"/>
-    <link href="<s:url value='/struts/niftycorners/niftyPrint.css'/>" rel="stylesheet" type="text/css" media="print"/>
-    <script language="JavaScript" type="text/javascript" src="<s:url value='/struts/niftycorners/nifty.js'/>"></script>
-	<script language="JavaScript" type="text/javascript">
-        window.onload = function(){
-            if(!NiftyCheck()) {
-                return;
-            }
-            // perform niftycorners rounding
-            // eg.
-            // Rounded("blockquote","tr bl","#ECF1F9","#CDFFAA","smooth border #88D84F");
-        }
-    </script>
-    <decorator:head/>
-</head>
-<body id="page-home">
-    <div id="page">
-        <div id="header" class="clearfix">
-        	头部
-            <hr />
-        </div>
+					<!-- Carousel indicators -->
+					<ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+						<li data-slide-to="1" data-target="#myCarousel"></li>
+						<li data-slide-to="2" data-target="#myCarousel"></li>
+					</ol>
 
-        <div id="content" class="clearfix">
-            <div id="main">
-            	<h3>Main Content</h3>
-            	<decorator:body/>
-                <hr />
-            </div>
+					<!-- Carousel items -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="img/stock1.jpg" />
+						</div>
+						<div class="item">
+							<img src="img/stock2.jpg" />
+						</div>
+						<div class="item">
+							<img src="img/stock6.jpg" />
+						</div>
+					</div>
 
-            <div id="sub">
-            	<h3>Sub Content</h3>
-            </div>
+					<!-- Carousel nav -->
+					<a class="carousel-control left" data-slide="prev"
+						href="#myCarousel"><span
+						class="glyphicon glyphicon-chevron-left"></span></a> <a
+						class="carousel-control right" data-slide="next"
+						href="#myCarousel"><span
+						class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+			</div>
+		</div>
+		<!-- 介绍栏 -->
+		<div class="container-top">
+			<div class="container">
+				<h3>失物招领网</h3>
 
+				<p>失物招领网是一个专业的词汇学习网站。 失物招领网核心教学理念：
+					温故即知新。简单地说，就是将用户需要学习的新词和曾经学过的单词关联起来，变着各种花样重复，同时在学习新知的过程中复习旧识。</p>
+			</div>
+		</div>
 
-            <div id="local">
-                <h3>Local Nav. Bar</h3>
-                <ul>
-                    <li><a href="#">Content page 1</a></li>
-                    <li><a href="#">Content page 2</a></li>
-                    <li><a href="#">Content page 3</a></li>
-                    <li><a href="#">Content page 4</a></li>
-                    <li><a href="#">Content page 5</a></li>
-                    <li><a href="#">Content page 6</a></li>
-                </ul>
-            </div>
+		<!-- 中间的三个大图标 -->
+		<div class="container-intro">
+			<div class="container">
+				<div class="row">
 
+					<!--大图标-->
+					<div class="col-md-4">
+						<div align="center">
+							<button class="btn btn-default btn-huge" type="button">
+								<i class="fa fa-search icon-huge"></i>
+							</button>
+							<div style="height:40px;">
 
-            <div id="nav">
-                <div class="wrapper">
-                <h3>Nav. bar</h3>
-                <ul class="clearfix">
-                     <li><a href="#">Menu 1</a></li>
-                     <li><a href="#">Menu 2</a></li>
-                     <li><a href="#">Menu 3</a></li>
-                     <li><a href="#">Menu 4</a></li>
-                     <li><a href="#">Menu 5</a></li>
-                     <li class="last"><a href="#">Menu 6</a></li>
-                </ul>
-                </div>
-                <hr />
-            </div>
-        </div>
+								<p class="icon-p">
+									<b>寻找失物</b>
+								</p>
+							</div>
+						</div>
+					</div>
 
-        <div id="footer" class="clearfix">
-            Footer
-        </div>
+					<!--大图标-->
+					<div class="col-md-4">
+						<div align="center">
+							<button class="btn btn-default btn-huge"
+								onclick="location.href='http://www.example.com'" type="button">
+								<i class="fa fa-eye icon-huge"></i>
+							</button>
+							<div style="height:40px;">
 
-    </div>
+								<p class="icon-p">
+									<b>寻找失主</b>
+								</p>
+							</div>
+						</div>
+					</div>
 
-    <div id="extra1">&nbsp;</div>
-    <div id="extra2">&nbsp;</div>
-</body>
-</html>
+					<!--大图标-->
+					<div class="col-md-4">
+						<div align="center">
+							<button class="btn btn-default btn-huge" type="button">
+								<i class="fa fa-cube icon-huge"></i>
+							</button>
+							<div class="icon-p">
+
+								<p style="color:#555555;">
+									<b>物品集中营</b>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--正文-->
+		<div class="container-maincontent">
+			<div class="container">
+				<decorator:body></decorator:body>
+			</div>
+		</div>
+	</body>
+</page:applyDecorator>
