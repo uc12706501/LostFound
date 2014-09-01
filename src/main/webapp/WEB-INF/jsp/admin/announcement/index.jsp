@@ -7,6 +7,7 @@
 		<th><s:text name="admin.anno.tablehead.id"></s:text></th>
 		<th><s:text name="admin.anno.tablehead.display"></s:text></th>
 		<th><s:text name="admin.anno.tablehead.picUrl"></s:text></th>
+		<th><s:text name="admin.anno.tablehead.createDate"></s:text></th>
 		<th><s:text name="admin.anno.tablehead.operate"></s:text></th>
 	</tr>
 	<tbody>
@@ -19,6 +20,9 @@
 						var="imageLink">
 						<s:param name="announcementId" value="%{#anno.id}" />
 					</s:url> <img alt="anno pic" src='<s:property value="#imageLink"/>'></td>
+				<td>
+					<s:property value="createDate"/>
+				</td>
 				<td><s:url action="create" namespace="/admin/announcement"
 						var="link">
 						<s:param name="announcementId" value="%{#anno.id}" />

@@ -1,16 +1,17 @@
 package com.lkk.lostfound.model;
 
-import javax.persistence.*;
+import java.util.Date;
 
-import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import javax.persistence.*;
 
 @Entity
 public class Announcement {
 	private long id;
 	private byte[] image;
 	private Boolean display;
+	private Date createDate;
 
+	// getter
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "announcement_id")
@@ -29,6 +30,13 @@ public class Announcement {
 		return display;
 	}
 
+	@Column(name = "announcement_createDate")
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	// setter
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -40,5 +48,9 @@ public class Announcement {
 	// @RequiredFieldValidator(key = "validate.required")
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 }

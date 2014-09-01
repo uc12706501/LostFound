@@ -1,5 +1,7 @@
 package com.lkk.lostfound.action.admin.announcement;
 
+import java.util.Date;
+
 import com.lkk.lostfound.model.Announcement;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
@@ -19,9 +21,10 @@ public class SingleAnnouncementActionBase extends AnnouncementActionBase
 	public void prepare() throws Exception {
 
 		if (announcementId == null
-				|| announcementDao.get(getAnnouncementId()) == null)
+				|| announcementDao.get(getAnnouncementId()) == null) {
 			model = new Announcement();
-		else
+			model.setCreateDate(new Date(System.currentTimeMillis()));
+		} else
 			model = announcementDao.get(getAnnouncementId());
 	}
 
