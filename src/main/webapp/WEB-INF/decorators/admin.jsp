@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><s:text name="admin.title"></s:text></title>
+<title><decorator:title></decorator:title></title>
 <!-- Bootstrap Core CSS -->
 <link href='<s:url value='/styles/css/bootstrap.min.css'></s:url>'
 	rel="stylesheet">
@@ -128,7 +128,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">
-						<s:property value="#title" default="Blank Title"></s:property>
+						<decorator:title default="Default Title"></decorator:title>
+<!-- 						<s:property value="#title" default="Default Title"></s:property> -->
 					</h1>
 				</div>
 			</div>

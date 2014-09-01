@@ -2,7 +2,7 @@
 
 <s:head />
 
-<s:set var="title" value="%{getText('admin.anno.create.title')}" />
+<title><s:text name="admin.anno.create.title"></s:text></title>
 
 <s:form cssClass="form-horizontal" role="form" action="confirmCreate"
 	method="post" enctype="multipart/form-data" theme="simple">
