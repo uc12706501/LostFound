@@ -45,10 +45,6 @@ public class CreateAction extends SinglePickedItemActionBase {
 		}
 	}
 
-	public String details() {
-		return "details";
-	}
-
 	// getter and setter
 	public void setUpload(File upload) {
 		this.upload = upload;

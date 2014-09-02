@@ -26,9 +26,9 @@
 
 		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
 
-		<action name="details" class="com.lkk.lostfound.action.pickedItem.CreateAction"
-			method="details">
-			<result name="details">/WEB-INF/jsp/pickeditem/details.jsp</result>
+		<action name="details"
+			class="com.lkk.lostfound.action.pickedItem.DetailsAction">
+			<result>/WEB-INF/jsp/pickeditem/details.jsp</result>
 		</action>
 
 		<action name="create" class="com.lkk.lostfound.action.pickedItem.CreateAction">
@@ -38,7 +38,8 @@
 			<result name="input">/WEB-INF/jsp/pickeditem/create.jsp</result>
 		</action>
 
-		<action name="save" class="com.lkk.lostfound.action.pickedItem.CreateAction" method="save">
+		<action name="save" class="com.lkk.lostfound.action.pickedItem.CreateAction"
+			method="save">
 			<result name="success" type="redirectAction">
 				<param name="actionName">details</param>
 				<param name="id">${id}</param>
