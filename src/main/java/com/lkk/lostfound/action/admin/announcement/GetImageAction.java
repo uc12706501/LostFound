@@ -9,6 +9,7 @@ public class GetImageAction extends SingleAnnouncementActionBase {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	// todo 限制图片的大小、格式
 	public InputStream getInputStream() {
 		if (model != null && model.getImage() != null)
 			return new ByteArrayInputStream(model.getImage());

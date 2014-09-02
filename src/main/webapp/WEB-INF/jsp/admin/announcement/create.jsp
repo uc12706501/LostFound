@@ -6,15 +6,17 @@
 
 <s:form cssClass="form-horizontal" role="form" action="confirmCreate"
 	method="post" enctype="multipart/form-data" theme="simple">
+	<s:hidden name="id" value="%{id}"></s:hidden>
+	<s:actionmessage />
 	<div class="form-group">
 		<label class="col-sm-2 control-label"><s:text
 				name="admin.anno.picUrl"></s:text></label>
 		<div class="col-sm-6">
-			<s:file name="upload"></s:file>
+			<s:file name="upload" cssStyle="position:relative;"></s:file>
 		</div>
 		<div class="col-sm-4">
 			<label style="padding-top: 7px;"> <s:fielderror
-					fieldName="imageUrl"></s:fielderror></label>
+					fieldName="upload"></s:fielderror></label>
 		</div>
 	</div>
 	<div class="form-group">

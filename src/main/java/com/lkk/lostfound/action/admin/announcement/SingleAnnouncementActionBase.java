@@ -9,8 +9,9 @@ import com.opensymphony.xwork2.Preparable;
 public class SingleAnnouncementActionBase extends AnnouncementActionBase
 		implements ModelDriven<Announcement>, Preparable {
 
+	private static final long serialVersionUID = 1L;
 	protected Announcement model;
-	protected Long announcementId;
+	protected long id;
 
 	// implement of ModelDriven
 	public Announcement getModel() {
@@ -20,21 +21,17 @@ public class SingleAnnouncementActionBase extends AnnouncementActionBase
 	// implement of Preparable
 	public void prepare() throws Exception {
 
-		if (announcementId == null
-				|| announcementDao.get(getAnnouncementId()) == null) {
+		if (id == 0 || announcementDao.get(id) == null) {
 			model = new Announcement();
 			model.setCreateDate(new Date(System.currentTimeMillis()));
 		} else
-			model = announcementDao.get(getAnnouncementId());
+			model = announcementDao.get(id);
 	}
 
 	// getter and setter
-	public long getAnnouncementId() {
-		return announcementId;
-	}
 
-	public void setAnnouncementId(long announcementId) {
-		this.announcementId = announcementId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

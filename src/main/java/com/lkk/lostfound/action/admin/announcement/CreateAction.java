@@ -21,6 +21,7 @@ public class CreateAction extends SingleAnnouncementActionBase {
 	@Override
 	@SkipValidation
 	public String execute() throws Exception {
+		// 修改时显示图片
 		return INPUT;
 	}
 
@@ -28,10 +29,14 @@ public class CreateAction extends SingleAnnouncementActionBase {
 	public String confirm() throws Exception {
 		if (!StringUtils.isNullOrEmpty(uploadFileName)) {
 			model.setImage(FileUtils.getBytesFromFile(upload));
-			if (model.getId() == 0)
+			if (id == 0)
 				announcementDao.save(model);
 			else
 				announcementDao.update(model);
+			return SUCCESS;
+		}
+		if (id != 0) {
+			announcementDao.update(model);
 			return SUCCESS;
 		}
 		addFieldError("upload", "请选择文件");
