@@ -16,6 +16,7 @@ public class CreateAction extends SingleAnnouncementActionBase {
 
 	private File upload;
 	private String uploadFileName;
+	@SuppressWarnings("unused")
 	private String uploadContentType;
 
 	@Override

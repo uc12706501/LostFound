@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
+
 @Entity
 @Table(name = "picked_item")
 public class PickedItem extends ItemBase {
@@ -14,6 +16,7 @@ public class PickedItem extends ItemBase {
 		return infoSource;
 	}
 
+	@StringLengthFieldValidator(maxLength = "200", message = "长度不超过200字符")
 	public void setInfoSource(String infoSource) {
 		this.infoSource = infoSource;
 	}

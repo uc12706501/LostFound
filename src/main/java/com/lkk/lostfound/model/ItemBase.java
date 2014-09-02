@@ -5,17 +5,22 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
+import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
+
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class ItemBase {
 
-	private Long id;
+	private long id;
 	private String name;
 	private String location;
 	private Date time;
 	private String remark;
 	private String character;
-	private String Address;
+	private String address;
 	private String telphone;
 	private byte[] image;
 	private ItemStatus status;
@@ -26,7 +31,7 @@ public abstract class ItemBase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name = "item_id")
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -57,7 +62,7 @@ public abstract class ItemBase {
 
 	@Column(name = "get_return_address", length = 200, nullable = false)
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	@Column(name = "contact_temphone", length = 20, nullable = false)
@@ -83,44 +88,56 @@ public abstract class ItemBase {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	//TODO 不可为空
+	@JoinColumn(name = "user_id",nullable=true)
 	public User getPublisher() {
 		return publisher;
 	}
 
-	@Column(name = "item_deleted",nullable=false)
+	@Column(name = "item_deleted", nullable = false)
 	public boolean getIsDelete() {
 		return isDelete;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
+	@RequiredStringValidator(message = "请输入物品名称")
+	@StringLengthFieldValidator(maxLength = "200", message = "长度不超过200字符")
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	@RequiredStringValidator(message = "请输入地点", shortCircuit = true)
+	@StringLengthFieldValidator(maxLength = "200", message = "长度不超过200字符")
 	public void setLocation(String location) {
 		this.location = location;
 	}
 
+	@RequiredFieldValidator(message = "请输入时间")
+	@TypeConversion(converter = "com.lkk.lostfound.converter.DateConverter")
 	public void setTime(Date time) {
 		this.time = time;
 	}
 
+	@StringLengthFieldValidator(maxLength = "1000", message = "长度不超过1000")
 	public void setCharacter(String character) {
 		this.character = character;
 	}
 
+	@StringLengthFieldValidator(maxLength = "1000", message = "长度不超过1000")
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
 
+	@StringLengthFieldValidator(maxLength = "200", message = "长度不超过200")
+	@RequiredStringValidator(message = "请输入地址")
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
+	@RequiredStringValidator(message = "请输入联系号码")
 	public void setTelphone(String telphone) {
 		this.telphone = telphone;
 	}
