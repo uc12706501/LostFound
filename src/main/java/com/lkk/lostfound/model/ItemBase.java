@@ -88,8 +88,8 @@ public class ItemBase {
 	}
 
 	@ManyToOne
-	//TODO 不可为空
-	@JoinColumn(name = "user_id",nullable=true)
+	// TODO 不可为空
+	@JoinColumn(name = "user_id", nullable = true)
 	public User getPublisher() {
 		return publisher;
 	}

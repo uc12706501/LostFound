@@ -4,6 +4,9 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
+
 @Entity
 @Table(name = "message")
 public class Message {
@@ -15,7 +18,7 @@ public class Message {
 
 	@Id
 	@Column(name = "message_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}
@@ -49,6 +52,8 @@ public class Message {
 		this.time = time;
 	}
 
+	@RequiredStringValidator(message = "请输入留言内容")
+	@StringLengthFieldValidator(maxLength = "1000", message = "留言长度不超过1000字符")
 	public void setContent(String content) {
 		this.content = content;
 	}
@@ -57,6 +62,7 @@ public class Message {
 		this.item = item;
 	}
 
+	@StringLengthFieldValidator(maxLength = "20", message = "留言长度不超过20字符")
 	public void setEditorName(String editorName) {
 		this.editorName = editorName;
 	}

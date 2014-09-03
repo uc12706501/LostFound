@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <title>招领详情</title>
+<s:head />
 
 <body>
 
@@ -69,19 +70,21 @@
 		<!--这里填充内容-->
 		<div class="container" id="leavemsg">
 			<div class="well">
-				<form class="form-horizontal" method="post">
+				<s:form cssClass="form-horizontal" method="post" action="save"
+					namespace="/message" theme="simple">
+					<s:hidden name="itemId" value="%{id}"></s:hidden>
 					<div class="form-group">
 						<label class="col-md-2 control-label">姓名(可选)</label>
 						<div class="col-md-10">
-							<input class="form-control" type="text"></input>
+							<s:textfield cssClass="form-control" name="editorName"></s:textfield>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">留言内容</label>
-
 						<div class="col-md-10">
-							<textarea class="form-control" rows="5"></textarea>
+							<s:textarea cssClass="form-control" rows="5" name="content"></s:textarea>
+							<s:fielderror fieldName="content"></s:fielderror>
 						</div>
 					</div>
 
@@ -90,7 +93,7 @@
 							<input class="btn btn-success" type="submit" value="提交"></input>
 						</div>
 					</div>
-				</form>
+				</s:form>
 			</div>
 		</div>
 
