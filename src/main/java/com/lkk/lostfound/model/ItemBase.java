@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class ItemBase {
+public class ItemBase {
 
 	private long id;
 	private String name;
