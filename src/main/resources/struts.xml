@@ -48,10 +48,25 @@
 		</action>
 	</package>
 
+	<!-- Item -->
+	<package name="item" namespace="/item" extends="struts-default">
+		<default-action-ref name="paramsPrepareParamsStack"></default-action-ref>
+		<action name="add" class="com.lkk.lostfound.action.item.AddItemAction"
+			method="input">
+			<result name="pickeditem">/WEB-INF/jsp/item/pickeditem-create.jsp</result>
+			<result name="lostitem">/WEB-INF/jsp/item/lostitem-create.jsp</result>
+		</action>
+
+		<action name="save" class="com.lkk.lostfound.action.item.AddItemAction">
+			<result name="success">/WEB-INF/jsp/item/pickeditem-create.jsp</result>
+		</action>
+	</package>
+
 	<!-- Message -->
 	<package name="message" namespace="/message" extends="struts-default">
 		<default-action-ref name="paramsPrepareParamsStack"></default-action-ref>
-		<action name="save" class="com.lkk.lostfound.action.message.SaveMessageAction">
+		<action name="save"
+			class="com.lkk.lostfound.action.message.SaveMessageAction">
 			<result name="success" type="redirectAction">
 				<param name="actionName">details</param>
 				<param name="namespace">/pickeditem</param>

@@ -8,21 +8,19 @@
 <div class="container-maincontent">
 	<div class="container">
 		<div class="well">
-			<s:form theme="simple" action="save" method="post"
-				namespace="/pickeditem" cssClass="form-horizontal"
-				enctype="multipart/form-data">
+			<s:form theme="simple" action="save" namespace="/item" method="post"
+				cssClass="form-horizontal" enctype="multipart/form-data">
 				<fieldset>
 					<legend class="text-center header">招领详情</legend>
-					<s:hidden name="id"></s:hidden>
 					<s:actionmessage />
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">招领物品名称</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="name"></s:textfield>
+							<s:textfield cssClass="form-control" name="pickedItem.name"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="name"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.name"></s:fielderror>
 						</div>
 					</div>
 
@@ -30,10 +28,10 @@
 						<label class="col-md-2 control-label">拾获地点</label>
 
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="location"></s:textfield>
+							<s:textfield cssClass="form-control" name="pickedItem.location"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="location"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.location"></s:fielderror>
 						</div>
 					</div>
 
@@ -41,21 +39,21 @@
 						<!-- TODO 修复同时显示转换错误和输入校验的错误 -->
 						<label class="col-md-2 control-label">拾获时间</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="time"
+							<s:textfield cssClass="form-control" name="pickedItem.time"
 								placeholder="日期格式为 2014/8/1"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="time"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.time"></s:fielderror>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">物品特点</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="character"></s:textfield>
+							<s:textfield cssClass="form-control" name="pickedItem.character"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="character"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.character"></s:fielderror>
 						</div>
 					</div>
 
@@ -73,39 +71,40 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">信息来源</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="infoSource"></s:textfield>
+							<s:textfield cssClass="form-control" name="pickedItem.infoSource"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="ownnerName"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.infoSource"></s:fielderror>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">认领地址</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="address"></s:textfield>
+							<s:textfield cssClass="form-control" name="pickedItem.address"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="address"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.address"></s:fielderror>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">联系电话</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="telphone"></s:textfield>
+							<s:textfield cssClass="form-control" name="pickedItem.telphone"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="telphone"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.telphone"></s:fielderror>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">备注</label>
 						<div class="col-md-8">
-							<s:textarea cssClass="form-control" rows="5" name="remark"></s:textarea>
+							<s:textarea cssClass="form-control" rows="5"
+								name="pickedItem.remark"></s:textarea>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="remark"></s:fielderror>
+							<s:fielderror fieldName="pickedItem.remark"></s:fielderror>
 						</div>
 					</div>
 					<div class="form-group">
@@ -122,4 +121,3 @@
 
 	<!-- /.container -->
 </div>
-<s:debug />
