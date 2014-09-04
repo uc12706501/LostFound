@@ -58,6 +58,7 @@
 		<property name="sessionFactory" ref="mySessionFactory"></property>
 	</bean>
 
+	<!-- Actions -->
 	<bean name="anno-create"
 		class="com.lkk.lostfound.action.admin.announcement.CreateAction">
 		<property name="announcementDao" ref="announcementDao"></property>
@@ -76,5 +77,11 @@
 	<bean name="saveMessageAction" class="com.lkk.lostfound.action.message.SaveMessageAction">
 		<property name="itemDao" ref="itemDao"></property>
 		<property name="messageDao" ref="messageDao"></property>
+	</bean>
+	<bean name="addItemAction" class="com.lkk.lostfound.action.item.AddItemAction">
+		<property name="itemDao" ref="itemDao"></property>
+	</bean>
+	<bean name="itemDetails" class="com.lkk.lostfound.action.item.ItemDetails">
+		<property name="itemDao" ref="itemDao"></property>
 	</bean>
 </beans>

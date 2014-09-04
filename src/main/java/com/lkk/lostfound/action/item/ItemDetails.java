@@ -33,10 +33,6 @@ public class ItemDetails extends ActionSupport implements Preparable {
 		this.itemDao = itemDao;
 	}
 
-	private void setClazz(String clazz) {
-		this.clazz = clazz;
-	}
-
 	public PickedItem getPickedItem() {
 		return (PickedItem) item;
 	}
@@ -51,5 +47,13 @@ public class ItemDetails extends ActionSupport implements Preparable {
 
 	public void setLostItem(LostItem lostItem) {
 		this.item = lostItem;
+	}
+
+	public String getClazz() {
+		return clazz;
+	}
+
+	public void setClazz(String clazz) {
+		this.clazz = clazz;
 	}
 }

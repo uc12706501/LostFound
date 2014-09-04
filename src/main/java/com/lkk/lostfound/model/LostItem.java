@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "lost_item")
+@DiscriminatorValue("1")
 public class LostItem extends ItemBase {
 	private String ownerName;
 
