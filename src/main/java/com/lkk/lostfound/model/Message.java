@@ -34,7 +34,7 @@ public class Message {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "item_id")
+	@JoinColumn(name = "item_id",nullable=false)
 	public ItemBase getItem() {
 		return item;
 	}
