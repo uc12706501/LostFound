@@ -10,6 +10,7 @@
 		<div class="well">
 			<s:form theme="simple" action="save" namespace="/item" method="post"
 				cssClass="form-horizontal" enctype="multipart/form-data">
+				<s:hidden name="clazz" value="%{clazz}"></s:hidden>
 				<fieldset>
 					<legend class="text-center header">招领详情</legend>
 					<s:actionmessage />
