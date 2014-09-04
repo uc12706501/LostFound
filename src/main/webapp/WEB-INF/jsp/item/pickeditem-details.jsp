@@ -72,7 +72,7 @@
 			<div class="well">
 				<s:form cssClass="form-horizontal" method="post" action="save"
 					namespace="/message" theme="simple">
-					<s:hidden name="itemId" value="%{id}"></s:hidden>
+					<s:hidden name="itemId" value="%{pickedItem.id}"></s:hidden>
 					<div class="form-group">
 						<label class="col-md-2 control-label">姓名(可选)</label>
 						<div class="col-md-10">
