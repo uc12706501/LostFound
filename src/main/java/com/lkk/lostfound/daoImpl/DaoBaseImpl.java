@@ -42,5 +42,5 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 		return getEntityClass().getName();
 	}
 
-	abstract Class getEntityClass();
+	abstract Class<?> getEntityClass();
 }

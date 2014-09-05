@@ -47,6 +47,9 @@
 		<!-- 介绍栏 -->
 		<div class="container-top">
 			<div class="container">
+				<h1>
+					<s:property value="ids.size()"></s:property>
+				</h1>
 				<h3>失物招领网</h3>
 
 				<p>失物招领网是一个专业的词汇学习网站。 失物招领网核心教学理念：
