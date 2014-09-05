@@ -9,7 +9,8 @@
          http://www.springframework.org/schema/aop
          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
          http://www.springframework.org/schema/context
-         http://www.springframework.org/schema/context/spring-context-3.0.xsd" default-autowire="byName">
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName">
 
 	<bean name="helloWorldAction" class="com.lkk.lostfound.HelloWorldAction"></bean>
 
@@ -70,9 +71,6 @@
 	<bean name="anno-getImage"
 		class="com.lkk.lostfound.action.admin.announcement.GetImageAction">
 		<property name="announcementDao" ref="announcementDao"></property>
-	</bean>
-	<bean name="pickeditem" class="com.lkk.lostfound.action.pickedItem.CreateAction">
-		<property name="pickedItemDao" ref="pickedItemDao"></property>
 	</bean>
 	<bean name="saveMessageAction" class="com.lkk.lostfound.action.message.SaveMessageAction">
 		<property name="itemDao" ref="itemDao"></property>
