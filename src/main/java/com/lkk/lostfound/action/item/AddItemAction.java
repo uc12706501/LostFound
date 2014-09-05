@@ -12,11 +12,13 @@ import com.lkk.lostfound.utils.StringUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
+@SuppressWarnings("serial")
 public class AddItemAction extends ActionSupport implements Preparable {
 	private String clazz;
 	private ItemBase item;
 	private File upload;
 	private String uploadFileName;
+	@SuppressWarnings("unused")
 	private String uploadContentType;
 	private ItemDao itemDao;
 	private long id;

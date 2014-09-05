@@ -5,9 +5,9 @@ import com.lkk.lostfound.model.ItemBase;
 import com.lkk.lostfound.model.LostItem;
 import com.lkk.lostfound.model.PickedItem;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 
+@SuppressWarnings("serial")
 public class ItemDetails extends ActionSupport implements Preparable {
 
 	private long id;
