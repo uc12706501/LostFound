@@ -87,9 +87,10 @@
 			class="com.lkk.lostfound.action.message.SaveMessageAction">
 			<result name="success" type="redirectAction">
 				<param name="actionName">details</param>
-				<param name="namespace">/pickeditem</param>
+				<param name="namespace">/item</param>
+				<param name="clazz">${clazz}</param>
+				<param name="id">${itemId}</param>
 			</result>
-			<result name="input">/WEB-INF/jsp/pickeditem/details.jsp</result>
 		</action>
 	</package>
 

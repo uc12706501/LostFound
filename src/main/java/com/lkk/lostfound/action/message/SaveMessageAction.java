@@ -12,6 +12,7 @@ public class SaveMessageAction extends SingleMessageActionBase {
 
 	private ItemDao itemDao;
 	private long itemId;
+	private String clazz;
 
 	@Override
 	@Validations(visitorFields = { @VisitorFieldValidator(fieldName = "model", message = "Default message", shortCircuit = true) })
@@ -33,6 +34,18 @@ public class SaveMessageAction extends SingleMessageActionBase {
 
 	public void setItemId(long itemId) {
 		this.itemId = itemId;
+	}
+
+	public long getItemId() {
+		return itemId;
+	}
+
+	public String getClazz() {
+		return clazz;
+	}
+
+	public void setClazz(String clazz) {
+		this.clazz = clazz;
 	}
 
 }
