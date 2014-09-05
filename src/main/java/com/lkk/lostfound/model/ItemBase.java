@@ -83,7 +83,7 @@ public class ItemBase {
 		return status;
 	}
 
-	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	public List<Message> getMessages() {
 		return messages;
 	}

@@ -40,33 +40,13 @@
 			<div class="well">
 				<div class="text-right">
 					<a class="btn btn-success" href="#leavemsg">我要留言</a>
-
 				</div>
-				<hr>
-				<div class="row">
-					<div class="col-md-12">
-						匿名用户 <span class="pull-right">10天前</span>
+				<s:iterator value="lostItem.messages" var="msg">
+					<s:component template="showmsg.jsp">
+						<s:param name="msg" value="%{msg}"></s:param>
+					</s:component>
+				</s:iterator>
 
-						<p>楼主的失物找到没</p>
-					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<div class="col-md-12">
-						匿名用户 <span class="pull-right">12天前</span>
-
-						<p>我今天在公教见到一个，不知道是不是楼主的，请联系我。</p>
-
-					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<div class="col-md-12">
-						张三 <span class="pull-right">15天前</span>
-
-						<p>谢谢大家，东西已经找到了</p>
-					</div>
-				</div>
 			</div>
 		</div>
 
