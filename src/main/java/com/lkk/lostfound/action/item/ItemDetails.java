@@ -41,7 +41,7 @@ public class ItemDetails extends ActionSupport implements Preparable {
 		this.item = pickedItem;
 	}
 
-	public LostItem getlLostItem() {
+	public LostItem getLostItem() {
 		return (LostItem) item;
 	}
 

@@ -69,7 +69,7 @@
 
 		<action name="details" class="com.lkk.lostfound.action.item.ItemDetails">
 			<result name="pickedItem">/WEB-INF/jsp/item/pickeditem-details.jsp</result>
-			<result name="lostItem">/WEB-INF/jsp/item/pickeditem-details.jsp</result>
+			<result name="lostItem">/WEB-INF/jsp/item/lostitem-details.jsp</result>
 		</action>
 	</package>
 

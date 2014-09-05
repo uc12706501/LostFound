@@ -18,7 +18,7 @@
 						<h3>招领物品</h3>
 
 						<p>
-							<s:property value="name" />
+							<s:property value="pickedItem.name" />
 						</p>
 						<h3>物品详情</h3>
 						<ul>
