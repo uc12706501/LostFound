@@ -9,7 +9,7 @@
          http://www.springframework.org/schema/aop
          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
          http://www.springframework.org/schema/context
-         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd" default-autowire="byName">
 
 	<bean name="helloWorldAction" class="com.lkk.lostfound.HelloWorldAction"></bean>
 
@@ -83,5 +83,7 @@
 	</bean>
 	<bean name="itemDetails" class="com.lkk.lostfound.action.item.ItemDetails">
 		<property name="itemDao" ref="itemDao"></property>
+	</bean>
+	<bean name="getImageAction" class="com.lkk.lostfound.action.item.GetImageAction">
 	</bean>
 </beans>

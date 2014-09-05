@@ -71,6 +71,13 @@
 			<result name="pickedItem">/WEB-INF/jsp/item/pickeditem-details.jsp</result>
 			<result name="lostItem">/WEB-INF/jsp/item/lostitem-details.jsp</result>
 		</action>
+
+		<action name="getImage" class="com.lkk.lostfound.action.item.GetImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
 	</package>
 
 	<!-- Message -->

@@ -11,8 +11,11 @@
 			<div class="well">
 				<div class="row">
 					<div class="col-md-8">
+						<s:url action="getImage" namespace="/item" var="picUrl">
+							<s:param name="id" value="%{lostItem.id}"></s:param>
+						</s:url>
 						<img alt="" class="img-responsive"
-							src="http://placehold.it/750x500">
+							src='<s:property value="%{#picUrl}"></s:property>'>
 					</div>
 					<div class="col-md-4">
 						<h3>遗失物品</h3>
