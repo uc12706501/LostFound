@@ -10,28 +10,31 @@
 	</head>
 	<body>
 		<!-- 滚动图片 -->
-		<div class="container-alternate" id="top" style="background:#EF9C21;">
+		<div class="container-alternate" id="top"
+			style="background:#EF9C21;padding-top:4.5em">
 			<div class="container">
 				<div class="carousel slide" data-ride="carousel" id="myCarousel">
 
 					<!-- Carousel indicators -->
 					<ol class="carousel-indicators">
-						<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-						<li data-slide-to="1" data-target="#myCarousel"></li>
-						<li data-slide-to="2" data-target="#myCarousel"></li>
+						<s:iterator value="ids" status="st">
+							<li class='<s:if test="#st.index==0">active</s:if>'
+								data-slide-to='<s:property value="%{#st.index}"/>'
+								data-target="#myCarousel"></li>
+						</s:iterator>
 					</ol>
 
 					<!-- Carousel items -->
 					<div class="carousel-inner">
-						<div class="item active">
-							<img src="img/stock1.jpg" />
-						</div>
-						<div class="item">
-							<img src="img/stock2.jpg" />
-						</div>
-						<div class="item">
-							<img src="img/stock6.jpg" />
-						</div>
+						<s:iterator value="ids" status="st">
+							<div class="item <s:if test="#st.index==0">active</s:if>">
+								<s:url action="getImage" var="imgUrl"
+									namespace="/admin/announcement">
+									<s:param name="id" value="%{top}"></s:param>
+								</s:url>
+								<img src='<s:property value="imgUrl"/>' class="full" />
+							</div>
+						</s:iterator>
 					</div>
 
 					<!-- Carousel nav -->
@@ -47,11 +50,7 @@
 		<!-- 介绍栏 -->
 		<div class="container-top">
 			<div class="container">
-				<h1>
-					<s:property value="ids.size()"></s:property>
-				</h1>
 				<h3>失物招领网</h3>
-
 				<p>失物招领网是一个专业的词汇学习网站。 失物招领网核心教学理念：
 					温故即知新。简单地说，就是将用户需要学习的新词和曾经学过的单词关联起来，变着各种花样重复，同时在学习新知的过程中复习旧识。</p>
 			</div>
