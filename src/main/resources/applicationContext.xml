@@ -61,15 +61,15 @@
 
 	<!-- Actions -->
 	<bean name="anno-create"
-		class="com.lkk.lostfound.action.admin.announcement.CreateAction">
+		class="com.lkk.lostfound.action.announcement.CreateAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
 	<bean name="anno-index"
-		class="com.lkk.lostfound.action.admin.announcement.IndexAction">
+		class="com.lkk.lostfound.action.announcement.IndexAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
 	<bean name="anno-getImage"
-		class="com.lkk.lostfound.action.admin.announcement.GetImageAction">
+		class="com.lkk.lostfound.action.announcement.GetImageAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
 	<bean name="saveMessageAction" class="com.lkk.lostfound.action.message.SaveMessageAction">

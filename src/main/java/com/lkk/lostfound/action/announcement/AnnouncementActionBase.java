@@ -1,4 +1,4 @@
-package com.lkk.lostfound.action.admin.announcement;
+package com.lkk.lostfound.action.announcement;
 
 import com.lkk.lostfound.dao.AnnouncementDao;
 import com.opensymphony.xwork2.ActionSupport;

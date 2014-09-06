@@ -1,4 +1,4 @@
-package com.lkk.lostfound.action.admin.announcement;
+package com.lkk.lostfound.action.announcement;
 
 import java.util.List;
 

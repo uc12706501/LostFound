@@ -92,27 +92,26 @@
 		</default-interceptor-ref>
 
 		<action name="index"
-			class="com.lkk.lostfound.action.admin.announcement.IndexAction">
+			class="com.lkk.lostfound.action.announcement.IndexAction">
 			<result name="success">/WEB-INF/jsp/admin/announcement/index.jsp
 			</result>
 		</action>
 
 		<action name="create"
-			class="com.lkk.lostfound.action.admin.announcement.CreateAction">
+			class="com.lkk.lostfound.action.announcement.CreateAction">
 			<result name="input">/WEB-INF/jsp/admin/announcement/create.jsp
 			</result>
 		</action>
 
 		<action name="confirmCreate"
-			class="com.lkk.lostfound.action.admin.announcement.CreateAction"
-			method="confirm">
+			class="com.lkk.lostfound.action.announcement.CreateAction" method="confirm">
 			<result type="redirectAction">index</result>
 			<result name="input">/WEB-INF/jsp/admin/announcement/create.jsp
 			</result>
 		</action>
 
 		<action name="getImage"
-			class="com.lkk.lostfound.action.admin.announcement.GetImageAction">
+			class="com.lkk.lostfound.action.announcement.GetImageAction">
 			<result name="success" type="stream">
 				<param name="contentType">image</param>
 				<param name="inputName">inputStream</param>
