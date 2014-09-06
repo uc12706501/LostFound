@@ -1,4 +1,4 @@
-package com.lkk.lostfound.action.home;
+package com.lkk.lostfound.announcement;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
 @SuppressWarnings("serial")
-public class IndexAction extends ActionSupport implements Preparable {
+public class GetIndexAnnosAction extends ActionSupport implements Preparable {
 	private AnnouncementDao announcementDao;
 	private List<Long> ids;
 

@@ -8,7 +8,7 @@
 	<!-- Home -->
 	<package name="home" namespace="/" extends="struts-default">
 		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
-		<action name="index" class="com.lkk.lostfound.action.home.IndexAction">
+		<action name="index">
 			<result name="success">/WEB-INF/jsp/index.jsp</result>
 		</action>
 	</package>
@@ -53,9 +53,18 @@
 		</action>
 	</package>
 
+	<!-- Announcement -->
+	<package name="announcement" namespace="/anno" extends="struts-default">
+		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+		<action name="getIndexAnnos"
+			class="com.lkk.lostfound.announcement.GetIndexAnnosAction">
+			<result name="success">/WEB-INF/jsp/announcement/indexAnnos.jsp</result>
+		</action>
+	</package>
+
 	<!-- Message -->
 	<package name="message" namespace="/message" extends="struts-default">
-		<default-action-ref name="paramsPrepareParamsStack"></default-action-ref>
+		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
 		<action name="save"
 			class="com.lkk.lostfound.action.message.SaveMessageAction">
 			<result name="success" type="redirectAction">

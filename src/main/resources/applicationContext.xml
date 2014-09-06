@@ -84,6 +84,6 @@
 	</bean>
 	<bean name="getImageAction" class="com.lkk.lostfound.action.item.GetImageAction">
 	</bean>
-	<bean name="indexAction" class="com.lkk.lostfound.action.home.IndexAction">
+	<bean name="indexAction" class="com.lkk.lostfound.announcement.GetIndexAnnosAction">
 	</bean>
 </beans>
