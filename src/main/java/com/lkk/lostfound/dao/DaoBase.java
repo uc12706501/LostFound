@@ -2,6 +2,10 @@ package com.lkk.lostfound.dao;
 
 import java.util.*;
 
+import org.javatuples.Pair;
+
+import com.lkk.lostfound.daoImpl.DaoBaseImpl.SortDirection;
+
 public interface DaoBase<T> {
 
 	T get(long entityId);
@@ -12,9 +16,17 @@ public interface DaoBase<T> {
 
 	void delete(long entityId);
 
+	// 查询
 	List<T> getAll();
 
-	List<T> getPartial(int pageSize, int pageIndex);
+	List<T> getLasted(int count);
 
-	List<T> Query(String queryString);
+	Pair<List<T>, Integer> getPartial(int pageIndex, int PageSize);
+
+	Pair<List<T>, Integer> getPartial(int pageIndex, int PageSize,
+			String field, String filterString);
+
+	Pair<List<T>, Integer> getPartial(int pageIndex, int PageSize,
+			String field, String filterString, String sortField,
+			SortDirection direction);
 }

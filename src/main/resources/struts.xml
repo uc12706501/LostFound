@@ -8,7 +8,7 @@
 	<!-- Home -->
 	<package name="home" namespace="/" extends="struts-default">
 		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
-		<action name="index">
+		<action name="index" class="com.lkk.lostfound.action.IndexAction">
 			<result name="success">/WEB-INF/jsp/index.jsp</result>
 		</action>
 	</package>

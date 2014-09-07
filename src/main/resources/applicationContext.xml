@@ -46,10 +46,14 @@
 		</property>
 	</bean>
 
+	<!-- Daos -->
 	<bean name="announcementDao" class="com.lkk.lostfound.daoImpl.AnnouncementDaoImpl">
 		<property name="sessionFactory" ref="mySessionFactory"></property>
 	</bean>
 	<bean name="pickedItemDao" class="com.lkk.lostfound.daoImpl.PickedItemDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean name="lostItemDao" class="com.lkk.lostfound.daoImpl.LostItemDaoImpl">
 		<property name="sessionFactory" ref="mySessionFactory"></property>
 	</bean>
 	<bean name="itemDao" class="com.lkk.lostfound.daoImpl.ItemDaoImpl">
@@ -60,16 +64,13 @@
 	</bean>
 
 	<!-- Actions -->
-	<bean name="anno-create"
-		class="com.lkk.lostfound.action.announcement.CreateAction">
+	<bean name="anno-create" class="com.lkk.lostfound.action.announcement.CreateAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
-	<bean name="anno-index"
-		class="com.lkk.lostfound.action.announcement.IndexAction">
+	<bean name="anno-index" class="com.lkk.lostfound.action.announcement.IndexAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
-	<bean name="anno-getImage"
-		class="com.lkk.lostfound.action.announcement.GetImageAction">
+	<bean name="anno-getImage" class="com.lkk.lostfound.action.announcement.GetImageAction">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
 	<bean name="saveMessageAction" class="com.lkk.lostfound.action.message.SaveMessageAction">
@@ -84,6 +85,7 @@
 	</bean>
 	<bean name="getImageAction" class="com.lkk.lostfound.action.item.GetImageAction">
 	</bean>
-	<bean name="indexAction" class="com.lkk.lostfound.announcement.GetIndexAnnosAction">
+	<bean name="getIndexAnnosAction" class="com.lkk.lostfound.announcement.GetIndexAnnosAction">
 	</bean>
+	<bean name="indexAction" class="com.lkk.lostfound.action.IndexAction"></bean>
 </beans>

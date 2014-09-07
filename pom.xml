@@ -165,6 +165,15 @@
 			<version>1.0.1B</version>
 		</dependency>
 
+
+		<!-- javatuples -->
+		<dependency>
+			<groupId>org.javatuples</groupId>
+			<artifactId>javatuples</artifactId>
+			<version>1.2</version>
+			<scope>compile</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
