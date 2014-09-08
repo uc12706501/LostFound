@@ -1,7 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="decorator"
-	uri="http://www.opensymphony.com/sitemesh/decorator"%>
-<%@taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <head>
 <title>首页</title>
@@ -43,83 +40,39 @@
 			</ul>
 		</div>
 	</div>
-	<div class="tab-content">
 
+	<!-- 物品列表 -->
+	<div class="tab-content">
 		<!--第一个标签-->
 		<div class="tab-pane active" id="row1">
 
-			<!--第一行图片-->
-			<div class="row ">
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
+			<div class="row">
+				<s:iterator value="lostItems" status="st">
+					<s:url action="getImage" namespace="/item" var="imgUrl">
+						<s:param name="id" value="%{id}"></s:param>
+					</s:url>
+					<s:url action="details" namespace="/item" var="detailsUrl"
+						escapeAmp="false">
+						<s:param name="clazz" value="'lostItem'"></s:param>
+						<s:param name="id" value="%{id}"></s:param>
+					</s:url>
+					<div class="col-md-4 portfolio-item">
+						<a href='<s:property value="detailsUrl"/>'> <img alt=""
+							class="img-responsive" src='<s:property value="imgUrl"/>'>
+						</a>
+						<h3>
+							<a href='<s:property value="detailsUrl"/>'><s:property
+									value="name" /> </a>
+						</h3>
+						<p>
+							<s:property value="remark" />
+						</p>
+					</div>
+					<s:if test="(#st.index)%3==2">
 			</div>
-
-			<!--第二行图片-->
-			<div class="row ">
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
+			<div class="row">
+				</s:if>
+				</s:iterator>
 			</div>
 
 			<!--更多按钮-->
@@ -136,91 +89,48 @@
 
 		<!--第二个标签-->
 		<div class=" tab-pane" id="row2">
-
-			<!--第一行图片-->
-			<div class="row">
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name2</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+			<div class="tab-content">
+				<div class="tab-pane active" id="row1">
+					<div class="row">
+						<s:iterator value="pickedItems" status="st">
+							<s:url action="getImage" namespace="/item" var="imgUrl">
+								<s:param name="id" value="%{id}"></s:param>
+							</s:url>
+							<s:url action="details" namespace="/item" var="detailsUrl"
+								escapeAmp="false">
+								<s:param name="clazz" value="'pickedItem'"></s:param>
+								<s:param name="id" value="%{id}"></s:param>
+							</s:url>
+							<div class="col-md-4 portfolio-item">
+								<a href='<s:property value="detailsUrl"/>'> <img alt=""
+									class="img-responsive" src='<s:property value="imgUrl"/>'>
+								</a>
+								<h3>
+									<a href='<s:property value="detailsUrl"/>'><s:property
+											value="name" /> </a>
+								</h3>
+								<p>
+									<s:property value="remark" />
+								</p>
+							</div>
+							<s:if test="(#st.index)%3==2">
+					</div>
+					<div class="row">
+						</s:if>
+						</s:iterator>
+					</div>
 				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name2</a>
-					</h3>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name2</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-			</div>
-
-			<!--第二行图片-->
-			<div class="row">
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name2</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name2</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-				<div class="col-md-4 portfolio-item">
-					<a href="#"> <img alt="" class="img-responsive"
-						src="http://placehold.it/700x400">
-					</a>
-					<h3>
-						<a href="#">Project Name2</a>
-					</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-						viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-				</div>
-			</div>
-
-			<!--更多按钮-->
-			<div class="row">
-				<div class="col-sm-12 ">
-					<div align="center">
-						<div class="pagination">
-							<a class="btn btn-header btn-warning" href="#"><b>更多招领信息</b></a>
+				<!--更多按钮-->
+				<div class="row">
+					<div class="col-sm-12 ">
+						<div align="center">
+							<div class="pagination">
+								<a class="btn btn-header btn-warning" href="#"><b>更多招领信息</b></a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </body>

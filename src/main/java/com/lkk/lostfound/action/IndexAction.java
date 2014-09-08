@@ -16,9 +16,11 @@ public class IndexAction extends ActionSupport implements Preparable {
 	private LostItemDao lostItemDao;
 	private PickedItemDao pickedItemDao;
 
+	public static final int INDEX_MAX_ITEMS = 6;
+
 	public void prepare() throws Exception {
-		lostItems = lostItemDao.getLasted(8);
-		pickedItems = pickedItemDao.getLasted(8);
+		lostItems = lostItemDao.getLasted(INDEX_MAX_ITEMS);
+		pickedItems = pickedItemDao.getLasted(INDEX_MAX_ITEMS);
 	}
 
 	@Override
