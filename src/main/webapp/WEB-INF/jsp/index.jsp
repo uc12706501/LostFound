@@ -46,34 +46,10 @@
 		<!--第一个标签-->
 		<div class="tab-pane active" id="row1">
 
-			<div class="row">
-				<s:iterator value="lostItems" status="st">
-					<s:url action="getImage" namespace="/item" var="imgUrl">
-						<s:param name="id" value="%{id}"></s:param>
-					</s:url>
-					<s:url action="details" namespace="/item" var="detailsUrl"
-						escapeAmp="false">
-						<s:param name="clazz" value="'lostItem'"></s:param>
-						<s:param name="id" value="%{id}"></s:param>
-					</s:url>
-					<div class="col-md-4 portfolio-item">
-						<a href='<s:property value="detailsUrl"/>'> <img alt=""
-							class="img-responsive" src='<s:property value="imgUrl"/>'>
-						</a>
-						<h3>
-							<a href='<s:property value="detailsUrl"/>'><s:property
-									value="name" /> </a>
-						</h3>
-						<p>
-							<s:property value="remark" />
-						</p>
-					</div>
-					<s:if test="(#st.index)%3==2">
-			</div>
-			<div class="row">
-				</s:if>
-				</s:iterator>
-			</div>
+			<s:component template="displayitems.jsp">
+				<s:param name="items" value="%{lostItems}"></s:param>
+				<s:param name="clazz" value="%{'lostItem'}"></s:param>
+			</s:component>
 
 			<!--更多按钮-->
 			<div class="row">
@@ -91,34 +67,10 @@
 		<div class=" tab-pane" id="row2">
 			<div class="tab-content">
 				<div class="tab-pane active" id="row1">
-					<div class="row">
-						<s:iterator value="pickedItems" status="st">
-							<s:url action="getImage" namespace="/item" var="imgUrl">
-								<s:param name="id" value="%{id}"></s:param>
-							</s:url>
-							<s:url action="details" namespace="/item" var="detailsUrl"
-								escapeAmp="false">
-								<s:param name="clazz" value="'pickedItem'"></s:param>
-								<s:param name="id" value="%{id}"></s:param>
-							</s:url>
-							<div class="col-md-4 portfolio-item">
-								<a href='<s:property value="detailsUrl"/>'> <img alt=""
-									class="img-responsive" src='<s:property value="imgUrl"/>'>
-								</a>
-								<h3>
-									<a href='<s:property value="detailsUrl"/>'><s:property
-											value="name" /> </a>
-								</h3>
-								<p>
-									<s:property value="remark" />
-								</p>
-							</div>
-							<s:if test="(#st.index)%3==2">
-					</div>
-					<div class="row">
-						</s:if>
-						</s:iterator>
-					</div>
+					<s:component template="displayitems.jsp">
+						<s:param name="items" value="pickedItems"></s:param>
+						<s:param name="clazz" value="'pickedItem'"></s:param>
+					</s:component>
 				</div>
 
 				<!--更多按钮-->

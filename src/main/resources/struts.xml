@@ -51,6 +51,15 @@
 				<param name="inputName">inputStream</param>
 			</result>
 		</action>
+
+		<action name="lostItems"
+			class="com.lkk.lostfound.action.item.ListLostItemsAction">
+			<result>/WEB-INF/jsp/item/listItems.jsp</result>
+		</action>
+		<action name="pickedItems"
+			class="com.lkk.lostfound.action.item.ListPickedItemsAction">
+			<result>/WEB-INF/jsp/item/listItems.jsp</result>
+		</action>
 	</package>
 
 	<!-- Announcement -->

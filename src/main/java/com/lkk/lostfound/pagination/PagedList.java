@@ -54,20 +54,23 @@ public class PagedList<T> implements Iterator<T> {
 		if (pageCount <= maxDisplayLink) {
 			firstPage = 1;
 			lastPage = pageCount;
+			return;
 		}
 
 		int leftOffset = maxDisplayLink / 2;
 		int rightOffset = maxDisplayLink - leftOffset - 1;
-		int left = leftOffset;
+		int left = leftOffset + 1;
 		int right = pageCount - rightOffset;
 
 		if (pageIndex <= left) {
 			firstPage = 1;
 			lastPage = maxDisplayLink;
+			return;
 		}
 		if (pageIndex >= right) {
 			lastPage = pageCount;
-			firstPage = pageCount - maxDisplayLink;
+			firstPage = pageCount - maxDisplayLink + 1;
+			return;
 		} else {
 			firstPage = pageIndex - leftOffset;
 			lastPage = pageCount + rightOffset;

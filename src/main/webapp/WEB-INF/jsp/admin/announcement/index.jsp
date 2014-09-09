@@ -16,11 +16,11 @@
 				<tr>
 					<td><s:property value="id"></s:property></td>
 					<td><input type="checkbox" disabled="disabled"
-						<s:if test="%{#anno.display==true}">checked</s:if>></input></td>
+						<s:if test="display==true">checked</s:if>></input></td>
 					<td><s:url action="getImage" namespace="/admin/announcement"
 							var="imageLink">
 							<s:param name="id" value="%{#anno.id}" />
-						</s:url> <img alt="anno pic" src='<s:property value="#imageLink"/>'></td>
+						</s:url> <img alt="anno pic" src='<s:property value="imageLink"/>'></td>
 					<td><s:property value="createDate" /></td>
 					<td><s:url action="create" namespace="/admin/announcement"
 							var="link">
