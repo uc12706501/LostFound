@@ -88,6 +88,5 @@
 	<bean name="getIndexAnnosAction" class="com.lkk.lostfound.announcement.GetIndexAnnosAction">
 	</bean>
 	<bean name="indexAction" class="com.lkk.lostfound.action.IndexAction"></bean>
-	<bean name="listLostItemsAction" class="com.lkk.lostfound.action.item.ListLostItemsAction"></bean>
-	<bean name="listPickedItemAction" class="com.lkk.lostfound.action.item.ListPickedItemsAction"></bean>
+	<bean name="listitems" class="com.lkk.lostfound.action.item.ItemsListAction"></bean>
 </beans>

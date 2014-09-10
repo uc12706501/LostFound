@@ -52,12 +52,12 @@
 			</result>
 		</action>
 
-		<action name="lostItems"
-			class="com.lkk.lostfound.action.item.ListLostItemsAction">
+		<action name="lostItems" class="com.lkk.lostfound.action.item.ItemsListAction">
+			<param name="clazz">lostItem</param>
 			<result>/WEB-INF/jsp/item/listItems.jsp</result>
 		</action>
-		<action name="pickedItems"
-			class="com.lkk.lostfound.action.item.ListPickedItemsAction">
+		<action name="pickedItems" class="com.lkk.lostfound.action.item.ItemsListAction">
+			<param name="clazz">pickedItem</param>
 			<result>/WEB-INF/jsp/item/listItems.jsp</result>
 		</action>
 	</package>
