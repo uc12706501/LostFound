@@ -6,30 +6,6 @@
 
 <body>
 
-	<!--搜索框-->
-	<div class="row">
-		<div class="well well-index" style="background:none;box-shadow:none;">
-			<form class="form-inline">
-				<div class="form-group" style="width:auto;">
-					<select class="form-control">
-						<option>搜索失物</option>
-						<option>搜索招领</option>
-					</select>
-				</div>
-				<div class="form-group multi-search">
-					<div class="input-group">
-						<input class="form-control" type="text"> <span
-							class="input-group-btn">
-							<button class="btn btn-header" type="button">
-								<span class="glyphicon glyphicon-search"></span>
-							</button>
-						</span>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-
 	<!--切换标签-->
 	<div class="row">
 		<div class="col-sm-12">
@@ -56,7 +32,9 @@
 				<div class="col-sm-12 ">
 					<div align="center">
 						<div class="pagination">
-							<a class="btn btn-header btn-warning" href="#"><b>更多失物信息</b></a>
+							<s:url action="lostItems" namespace="/item" var="lostItemsUrl"></s:url>
+							<a class="btn btn-header btn-warning"
+								href='<s:property value="lostItemsUrl"/>'><b>更多失物信息</b></a>
 						</div>
 					</div>
 				</div>
@@ -78,7 +56,10 @@
 					<div class="col-sm-12 ">
 						<div align="center">
 							<div class="pagination">
-								<a class="btn btn-header btn-warning" href="#"><b>更多招领信息</b></a>
+								<s:url action="pickedItems" namespace="/item"
+									var="pickedItemsUrl"></s:url>
+								<a class="btn btn-header btn-warning"
+									href='<s:property value="pickedItemsUrl"/>'><b>更多招领信息</b></a>
 							</div>
 						</div>
 					</div>
