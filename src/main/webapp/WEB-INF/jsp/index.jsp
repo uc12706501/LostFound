@@ -6,6 +6,30 @@
 
 <body>
 
+	<!--搜索框-->
+	<div class="row">
+		<div class="well well-index" style="background:none;box-shadow:none;">
+			<s:form cssClass="form-inline">
+				<div class="form-group" style="width:auto;">
+					<select class="form-control">
+						<option>搜索失物</option>
+						<option>搜索招领</option>
+					</select>
+				</div>
+				<div class="form-group multi-search">
+					<div class="input-group">
+						<input class="form-control" type="text"> <span
+							class="input-group-btn">
+							<button class="btn btn-header" type="button">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</div>
+			</s:form>
+		</div>
+	</div>
+
 	<!--切换标签-->
 	<div class="row">
 		<div class="col-sm-12">
