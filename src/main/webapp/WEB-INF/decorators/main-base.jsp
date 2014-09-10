@@ -17,7 +17,10 @@
 <link
 	href='<s:url value='/styles/font-awesome-4.1.0/css/font-awesome.min.css'></s:url>'
 	rel="stylesheet" type="text/css">
+<script src='<s:url value="/js/jquery.js"/>'></script>
+<script src='<s:url value="/js/bootstrap.min.js"/>'></script>
 <decorator:head></decorator:head>
+
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -51,8 +54,6 @@
 
 	<!-- /.container-alternate -->
 
-
-
 	<div class="container-about">
 		<div class="container">
 			<div class="row about">
@@ -80,29 +81,10 @@
 		<!-- /.container -->
 	</div>
 
-
 	<footer>
 		<div class="container clearfix">
-
 			<p class="text-center">Copyright © Acme Corp 2013</p>
 		</div>
 	</footer>
-	<script src='<s:url value="/js/jquery.js"/>'></script>
-	<script src='<s:url value="/js/bootstrap.min.js"/>'></script>
-	<script>
-		$(".nav-link").click(
-				function(e) {
-					e.preventDefault();
-					var link = $(this);
-					var href = link.attr("href");
-					$("html,body").animate({
-						scrollTop : $(href).offset().top - 80
-					}, 500);
-					link.closest(".navbar").find(
-							".navbar-toggle:not(.collapsed)").click();
-				});
-	</script>
-
-
 </body>
 </html>

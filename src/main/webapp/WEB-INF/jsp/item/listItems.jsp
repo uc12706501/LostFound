@@ -3,6 +3,18 @@
 
 <div class="container-maincontent">
 	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="nav nav-tabs" role="tablist">
+					<s:if test="clazz=='lostItem'">
+						<li class="active" role="tab"><a data-toggle="tab" href="#"><b>失物信息</b></a></li>
+					</s:if>
+					<s:else>
+						<li role="tab" class="active"><a data-toggle="tab" href="#"><b>招领信息</b></a></li>
+					</s:else>
+				</ul>
+			</div>
+		</div>
 
 		<s:component template="displayitems.jsp">
 			<s:param name="items" value="items.items"></s:param>

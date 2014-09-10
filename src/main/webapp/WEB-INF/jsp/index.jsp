@@ -2,25 +2,36 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <head>
 <title>首页</title>
+<script>
+	$(".nav-link").click(function(e) {
+		e.preventDefault();
+		var link = $(this);
+		var href = link.attr("href");
+		$("html,body").animate({
+			scrollTop : $(href).offset().top - 80
+		}, 500);
+		link.closest(".navbar").find(".navbar-toggle:not(.collapsed)").click();
+	});
+</script>
 </head>
-
 <body>
 
 	<!--搜索框-->
 	<div class="row">
 		<div class="well well-index" style="background:none;box-shadow:none;">
-			<s:form cssClass="form-inline">
+			<s:form cssClass="form-inline" namespace="/item" action="lostItems"
+				id="search">
 				<div class="form-group" style="width:auto;">
 					<select class="form-control">
-						<option>搜索失物</option>
-						<option>搜索招领</option>
+						<option value="lost">搜索失物</option>
+						<option value="picked">搜索招领</option>
 					</select>
 				</div>
 				<div class="form-group multi-search">
 					<div class="input-group">
-						<input class="form-control" type="text"> <span
-							class="input-group-btn">
-							<button class="btn btn-header" type="button">
+						<s:textfield cssClass="form-control" theme="simple"></s:textfield>
+						<span class="input-group-btn">
+							<button class="btn btn-header" type="submit">
 								<span class="glyphicon glyphicon-search"></span>
 							</button>
 						</span>
