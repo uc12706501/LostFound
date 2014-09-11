@@ -28,7 +28,8 @@
 					<!--大图标-->
 					<div class="col-md-4">
 						<div align="center">
-							<button class="btn btn-default btn-huge" type="button">
+							<s:url action="lostItems" namespace="/item" var="lostUrl"></s:url>
+							<button class="btn btn-default btn-huge" type="button" onclick="location.href='<s:property value="lostUrl"/>'">
 								<i class="fa fa-search icon-huge"></i>
 							</button>
 							<div style="height:40px;">
@@ -42,8 +43,10 @@
 					<!--大图标-->
 					<div class="col-md-4">
 						<div align="center">
+							<s:url action="pickedItems" namespace="/item" var="pickedUrl"></s:url>
 							<button class="btn btn-default btn-huge"
-								onclick="location.href='http://www.example.com'" type="button">
+								onclick="location.href='<s:property value="pickedUrl"/>'"
+								type="button">
 								<i class="fa fa-eye icon-huge"></i>
 							</button>
 							<div style="height:40px;">
@@ -58,7 +61,8 @@
 					<div class="col-md-4">
 						<div align="center">
 							<s:url action="index" namespace="/" var="indexUrl"></s:url>
-							<button class="btn btn-default btn-huge" type="button">
+							<button class="btn btn-default btn-huge" type="button"
+								onClick="location.href='<s:property value="indexUrl"/>'">
 								<i class="fa fa-cube icon-huge"></i>
 							</button>
 							<div class="icon-p">
