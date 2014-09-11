@@ -32,9 +32,13 @@
 			<!-- /.navbar-header -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a class="nav-link" href="#features">网站首页</a></li>
-					<li><a class="nav-link" href="#tour-head">寻物启事</a></li>
-					<li><a class="nav-link" href="#faqs">招领中心</a></li>
+					<li><s:url action="index" namespace="/" var="indexUrl"></s:url>
+						<a class="nav-link" href='<s:property value="indexUrl"/>'>网站首页</a></li>
+					<li><s:url action="lostItems" namespace="/item" var="lostUrl"></s:url>
+						<a class="nav-link" href='<s:property value="lostUrl"/>'>寻物启事</a></li>
+					<li><s:url action="pickedItems" namespace="/item"
+							var="pickedUrl"></s:url> <a class="nav-link"
+						href='<s:property value="pickedUrl"/>'>招领中心</a></li>
 					<li><a class="nav-link" href="#about">关于我们</a></li>
 					<li>
 						<button class="btn btn-warning btn-header" type="button">登陆</button>
