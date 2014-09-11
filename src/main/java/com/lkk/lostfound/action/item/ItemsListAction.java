@@ -23,19 +23,19 @@ public class ItemsListAction extends ActionSupport {
 
 	private String clazz;
 	protected int pageIndex = 1;
-	public static final int PAGE_SIZE = 9;
+	public static final int PAGE_SIZE = 1;
 	protected String filter;
 
 	public void prepare() throws Exception {
 		if (clazz.equals("lostItem")) {
 			Pair<List<LostItem>, Integer> queryResults = lostItemDao
-					.getPartial(pageIndex, PAGE_SIZE);
+					.getPartial(pageIndex, PAGE_SIZE, "name", filter);
 			items = new PagedList<LostItem>(PAGE_SIZE, pageIndex,
 					queryResults.getValue1(), queryResults.getValue0());
 		}
 		if (clazz.equals("pickedItem")) {
 			Pair<List<PickedItem>, Integer> queryResults = pickedItemDao
-					.getPartial(pageIndex, PAGE_SIZE);
+					.getPartial(pageIndex, PAGE_SIZE, "name", filter);
 			items = new PagedList<PickedItem>(PAGE_SIZE, pageIndex,
 					queryResults.getValue1(), queryResults.getValue0());
 		}

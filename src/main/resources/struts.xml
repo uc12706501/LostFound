@@ -60,6 +60,9 @@
 			<param name="clazz">pickedItem</param>
 			<result>/WEB-INF/jsp/item/listItems.jsp</result>
 		</action>
+		<action name="itemsList" class="com.lkk.lostfound.action.item.ItemsListAction">
+			<result>/WEB-INF/jsp/item/listItems.jsp</result>
+		</action>
 	</package>
 
 	<!-- Announcement -->

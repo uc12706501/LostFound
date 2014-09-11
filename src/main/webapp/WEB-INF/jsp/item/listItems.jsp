@@ -25,9 +25,11 @@
 			<div class="col-sm-12 ">
 				<div align="center">
 					<s:component template="pagination.jsp">
+						<s:param name="filter" value="filter"></s:param>
 						<s:param name="pagedList" value="items"></s:param>
 						<s:param name="action"
 							value="clazz.equals('lostItem')?'lostItems':'pickedItems'"></s:param>
+						<s:param name="params" value="#{'clazz':clazz}"></s:param>
 					</s:component>
 				</div>
 			</div>

@@ -32,7 +32,6 @@
 								<i class="fa fa-search icon-huge"></i>
 							</button>
 							<div style="height:40px;">
-
 								<p class="icon-p">
 									<b>寻找失物</b>
 								</p>
@@ -48,7 +47,6 @@
 								<i class="fa fa-eye icon-huge"></i>
 							</button>
 							<div style="height:40px;">
-
 								<p class="icon-p">
 									<b>寻找失主</b>
 								</p>
@@ -59,11 +57,11 @@
 					<!--大图标-->
 					<div class="col-md-4">
 						<div align="center">
+							<s:url action="index" namespace="/" var="indexUrl"></s:url>
 							<button class="btn btn-default btn-huge" type="button">
 								<i class="fa fa-cube icon-huge"></i>
 							</button>
 							<div class="icon-p">
-
 								<p style="color:#555555;">
 									<b>物品集中营</b>
 								</p>

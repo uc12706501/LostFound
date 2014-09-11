@@ -10,6 +10,7 @@ import org.javatuples.Pair;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.lkk.lostfound.dao.DaoBase;
+import com.lkk.lostfound.utils.StringUtils;
 
 public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 		DaoBase<T> {
@@ -50,7 +51,7 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 
 	public Pair<List<T>, Integer> getPartial(int pageIndex, int PageSize,
 			String field, String filterString) {
-		return getPartial(pageIndex, PageSize, field, filterString);
+		return getPartial(pageIndex, PageSize, field, filterString, null, null);
 	}
 
 	public Pair<List<T>, Integer> getPartial(int pageIndex, int PageSize,
@@ -114,15 +115,15 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 			String sortField, SortDirection direction) {
 		// 基本查找
 		StringBuilder queryString = new StringBuilder();
-		queryString.append(String.format("from %s as e ",
-				getEntityClassName()));
+		queryString
+				.append(String.format("from %s as e ", getEntityClassName()));
 		// 过滤
-		if (filterField != null)
-			queryString.append(String.format("where e.%s like '%s' ",
-					filterField, filterString));
+		if (!StringUtils.containsNullOrEmpty(filterField, filterString))
+			queryString.append("where e." + filterField + " like '%"
+					+ filterString + "%'");
 		// 排序
 		String sortDirection = direction == SortDirection.ASC ? "asc" : "desc";
-		if (sortField != null)
+		if (!StringUtils.isNullOrEmpty(sortField))
 			queryString.append(String.format("orderby e.%s %s", sortField,
 					sortDirection));
 

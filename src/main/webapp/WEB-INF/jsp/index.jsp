@@ -19,17 +19,17 @@
 	<!--搜索框-->
 	<div class="row">
 		<div class="well well-index" style="background:none;box-shadow:none;">
-			<s:form cssClass="form-inline" namespace="/item" action="lostItems"
+			<s:form cssClass="form-inline" namespace="/item" action="itemsList"
 				id="search">
 				<div class="form-group" style="width:auto;">
-					<select class="form-control">
-						<option value="lost">搜索失物</option>
-						<option value="picked">搜索招领</option>
+					<select class="form-control" name="clazz">
+						<option value="lostItem">搜索失物</option>
+						<option value="pickedItem">搜索招领</option>
 					</select>
 				</div>
 				<div class="form-group multi-search">
 					<div class="input-group">
-						<s:textfield cssClass="form-control" theme="simple"></s:textfield>
+						<s:textfield cssClass="form-control" theme="simple" name="filter"></s:textfield>
 						<span class="input-group-btn">
 							<button class="btn btn-header" type="submit">
 								<span class="glyphicon glyphicon-search"></span>
