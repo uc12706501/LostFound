@@ -69,7 +69,7 @@
 	<package name="announcement" namespace="/anno" extends="struts-default">
 		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
 		<action name="getIndexAnnos"
-			class="com.lkk.lostfound.announcement.GetIndexAnnosAction">
+			class="com.lkk.lostfound.action.announcement.GetIndexAnnosAction">
 			<result name="success">/WEB-INF/jsp/announcement/indexAnnos.jsp</result>
 		</action>
 	</package>
