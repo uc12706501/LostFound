@@ -16,8 +16,16 @@
 	<!-- User -->
 	<package name="user" namespace="/user" extends="struts-default">
 		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
-		<action name="logon">
-			<result name="success">/WEB-INF/jsp/user/logon.jsp</result>
+		<global-results>
+			<result name="input">/WEB-INF/jsp/user/logon.jsp</result>
+		</global-results>
+		<action class="com.lkk.lostfound.action.user.LogonAction" name="logon"></action>
+		<action name="confirm" class="com.lkk.lostfound.action.user.LogonAction"
+			method="confirm">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
 		</action>
 	</package>
 
@@ -87,7 +95,6 @@
 			</result>
 		</action>
 	</package>
-
 
 	<!-- Admin Home -->
 	<package name="admin-home" namespace="/admin" extends="struts-default">

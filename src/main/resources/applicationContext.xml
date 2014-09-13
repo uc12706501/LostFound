@@ -62,6 +62,9 @@
 	<bean name="messageDao" class="com.lkk.lostfound.daoImpl.MessageDaoImp">
 		<property name="sessionFactory" ref="mySessionFactory"></property>
 	</bean>
+	<bean name="userDao" class="com.lkk.lostfound.daoImpl.UserDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
 
 	<!-- Actions -->
 	<bean name="anno-create" class="com.lkk.lostfound.action.announcement.CreateAction">
@@ -90,4 +93,5 @@
 	</bean>
 	<bean name="indexAction" class="com.lkk.lostfound.action.IndexAction"></bean>
 	<bean name="listitems" class="com.lkk.lostfound.action.item.ItemsListAction"></bean>
+	<bean name="logonAction" class="com.lkk.lostfound.action.user.LogonAction"></bean>
 </beans>
