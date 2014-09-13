@@ -11,8 +11,8 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 public class SecurityInterceptor extends AbstractInterceptor {
 
 	public static final String USER_OBJECT = "user";
-	public static final String NO_LOGON_RESULT = "authenticate";
-	public static final String NO_PERMISSION_RESULT = "nopermission";
+	public static final String NO_LOGON_RESULT = "notLogon";
+	public static final String NO_PERMISSION_RESULT = "noPermission";
 
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {

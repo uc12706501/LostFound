@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.lkk.lostfound.dao.ItemDao;
 import com.lkk.lostfound.model.ItemBase;
+import com.lkk.lostfound.security.RequiresAuthentication;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
 
@@ -16,6 +17,7 @@ public class SaveMessageAction extends SingleMessageActionBase {
 
 	@Override
 	@Validations(visitorFields = { @VisitorFieldValidator(fieldName = "model", message = "Default message", shortCircuit = true) })
+	@RequiresAuthentication
 	public String execute() throws Exception {
 		ItemBase item = itemDao.get(itemId);
 		message.setTime(new Date());

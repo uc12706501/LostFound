@@ -5,17 +5,34 @@
 
 <struts>
 
+	<!-- 带有身份验证的基础包 -->
+	<package name="home-package" extends="struts-default">
+		<interceptors>
+			<interceptor name="security"
+				class="com.lkk.lostfound.security.SecurityInterceptor"></interceptor>
+			<interceptor-stack name="securedBasicStack">
+				<interceptor-ref name="security"></interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="securedBasicStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="notLogon">/WEB-INF/jsp/notLogon.jsp</result>
+			<result name="noPermission">/WEB-INF/jsp/noPermission.jsp</result>
+		</global-results>
+	</package>
+
 	<!-- Home -->
-	<package name="home" namespace="/" extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+	<package name="home" namespace="/" extends="home-package">
 		<action name="index" class="com.lkk.lostfound.action.IndexAction">
 			<result name="success">/WEB-INF/jsp/index.jsp</result>
 		</action>
 	</package>
 
 	<!-- User -->
-	<package name="user" namespace="/user" extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+	<package name="user" namespace="/user" extends="home-package">
 		<action class="com.lkk.lostfound.action.user.LogonAction" name="logon">
 			<result name="input">/WEB-INF/jsp/user/logon.jsp</result>
 		</action>
@@ -41,8 +58,7 @@
 	</package>
 
 	<!-- Item -->
-	<package name="item" namespace="/item" extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+	<package name="item" namespace="/item" extends="home-package">
 		<action name="add" class="com.lkk.lostfound.action.item.AddItemAction"
 			method="input">
 			<result name="pickedItem">/WEB-INF/jsp/item/pickeditem-create.jsp</result>
@@ -85,8 +101,7 @@
 	</package>
 
 	<!-- Announcement -->
-	<package name="announcement" namespace="/anno" extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+	<package name="announcement" namespace="/anno" extends="home-package">
 		<action name="getIndexAnnos"
 			class="com.lkk.lostfound.action.announcement.GetIndexAnnosAction">
 			<result name="success">/WEB-INF/jsp/announcement/indexAnnos.jsp</result>
@@ -94,8 +109,7 @@
 	</package>
 
 	<!-- Message -->
-	<package name="message" namespace="/message" extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+	<package name="message" namespace="/message" extends="home-package">
 		<action name="save"
 			class="com.lkk.lostfound.action.message.SaveMessageAction">
 			<result name="success" type="redirectAction">
@@ -108,8 +122,7 @@
 	</package>
 
 	<!-- Admin Home -->
-	<package name="admin-home" namespace="/admin" extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+	<package name="admin-home" namespace="/admin" extends="home-package">
 		<action name="index">
 			<result name="success">/WEB-INF/jsp/admin/index.jsp</result>
 		</action>
@@ -118,9 +131,6 @@
 	<!-- Admin Announcement -->
 	<package name="admin-anno" namespace="/admin/announcement"
 		extends="struts-default">
-		<default-interceptor-ref name="paramsPrepareParamsStack">
-		</default-interceptor-ref>
-
 		<action name="index"
 			class="com.lkk.lostfound.action.announcement.IndexAction">
 			<result name="success">/WEB-INF/jsp/admin/announcement/index.jsp
