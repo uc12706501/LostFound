@@ -3,6 +3,7 @@ package com.lkk.lostfound.action.user;
 import com.lkk.lostfound.dao.UserDao;
 import com.opensymphony.xwork2.ActionSupport;
 
+@SuppressWarnings("serial")
 public class UserActionBase extends ActionSupport {
 	protected UserDao userDao;
 

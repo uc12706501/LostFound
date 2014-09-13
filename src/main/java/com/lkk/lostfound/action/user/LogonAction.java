@@ -5,10 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
-import com.lkk.lostfound.dao.UserDao;
 import com.lkk.lostfound.model.User;
 import com.lkk.lostfound.security.SecurityInterceptor;
-import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 
@@ -30,7 +28,7 @@ public class LogonAction extends UserActionBase implements ServletRequestAware {
 			@RequiredStringValidator(message = "请输入密码", fieldName = "password") })
 	public String confirm() {
 		User user = userDao.findByName(account);
-		if (user != null && user.getPassword() == password) {
+		if (user != null && user.getPassword().equals(password)) {
 			request.getSession(true).setAttribute(
 					SecurityInterceptor.USER_OBJECT, user);
 			return SUCCESS;

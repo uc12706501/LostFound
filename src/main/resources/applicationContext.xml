@@ -94,4 +94,5 @@
 	<bean name="indexAction" class="com.lkk.lostfound.action.IndexAction"></bean>
 	<bean name="listitems" class="com.lkk.lostfound.action.item.ItemsListAction"></bean>
 	<bean name="logonAction" class="com.lkk.lostfound.action.user.LogonAction"></bean>
+	<bean name="registerAction" class="com.lkk.lostfound.action.user.RegisterAction"></bean>
 </beans>

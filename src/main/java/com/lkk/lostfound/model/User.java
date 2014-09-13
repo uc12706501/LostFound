@@ -16,12 +16,12 @@ public class User {
 
 	@Id
 	@Column(name = "user_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}
 
-	@Column(name = "user_logon_name", length = 200, nullable = false)
+	@Column(name = "user_logon_name", length = 200, nullable = false, unique = true)
 	public String getAccount() {
 		return account;
 	}

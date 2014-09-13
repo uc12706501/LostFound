@@ -16,15 +16,26 @@
 	<!-- User -->
 	<package name="user" namespace="/user" extends="struts-default">
 		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
-		<global-results>
+		<action class="com.lkk.lostfound.action.user.LogonAction" name="logon">
 			<result name="input">/WEB-INF/jsp/user/logon.jsp</result>
-		</global-results>
-		<action class="com.lkk.lostfound.action.user.LogonAction" name="logon"></action>
+		</action>
 		<action name="confirm" class="com.lkk.lostfound.action.user.LogonAction"
 			method="confirm">
+			<result name="input">/WEB-INF/jsp/user/logon.jsp</result>
 			<result name="success" type="redirectAction">
 				<param name="actionName">index</param>
 				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<action name="register" class="com.lkk.lostfound.action.user.RegisterAction">
+			<result name="input">/WEB-INF/jsp/user/register.jsp</result>
+		</action>
+		<action name="confirmReg" class="com.lkk.lostfound.action.user.RegisterAction"
+			method="confirm">
+			<result name="input">/WEB-INF/jsp/user/register.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">logon</param>
 			</result>
 		</action>
 	</package>
