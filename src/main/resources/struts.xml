@@ -71,6 +71,13 @@
 				<param name="actionName">logon</param>
 			</result>
 		</action>
+
+		<action name="logoff" class="com.lkk.lostfound.action.user.LogoffAction">
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
 	</package>
 
 	<!-- Item -->
