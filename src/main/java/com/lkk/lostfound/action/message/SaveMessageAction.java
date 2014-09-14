@@ -17,7 +17,6 @@ public class SaveMessageAction extends SingleMessageActionBase {
 
 	@Override
 	@Validations(visitorFields = { @VisitorFieldValidator(fieldName = "model", message = "Default message", shortCircuit = true) })
-	@RequiresAuthentication
 	public String execute() throws Exception {
 		ItemBase item = itemDao.get(itemId);
 		message.setTime(new Date());

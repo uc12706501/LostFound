@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 import com.lkk.lostfound.model.UserRole;
 
-@Target(ElementType.METHOD)
+@Target(value = { ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RequiresAuthentication {
 	public UserRole[] value() default UserRole.User;

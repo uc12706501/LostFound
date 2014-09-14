@@ -6,6 +6,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
 import com.lkk.lostfound.model.User;
+import com.lkk.lostfound.model.UserRole;
 import com.lkk.lostfound.security.SecurityInterceptor;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.Validations;
@@ -31,6 +32,8 @@ public class LogonAction extends UserActionBase implements ServletRequestAware {
 		if (user != null && user.getPassword().equals(password)) {
 			request.getSession(true).setAttribute(
 					SecurityInterceptor.USER_OBJECT, user);
+			if (user.getRole() == UserRole.Admin)
+				return "adminIndex";
 			return SUCCESS;
 		}
 		addActionError("用户名和密码不匹配");

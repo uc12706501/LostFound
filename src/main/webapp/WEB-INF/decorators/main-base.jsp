@@ -40,12 +40,12 @@
 							var="pickedUrl"></s:url> <a class="nav-link"
 						href='<s:property value="pickedUrl"/>'>招领中心</a></li>
 					<li><a class="nav-link" href="#about">关于我们</a></li>
-					<li>
-						<button class="btn btn-warning btn-header" type="button">登陆</button>
-					</li>
-					<li>
-						<button class="btn btn-warning btn-header" type="button">注册</button>
-					</li>
+					<li><s:url action="logon" namespace="/user" var="userLogon"></s:url>
+						<button class="btn btn-warning btn-header" type="button"
+							onclick="location.href='<s:property value="userLogon"/>'">登陆</button></li>
+					<li><s:url action="register" namespace="/user" var="userReg"></s:url>
+						<button class="btn btn-warning btn-header" type="button"
+							onclick="location.href='<s:property value="userReg"/>'">注册</button></li>
 				</ul>
 			</div>
 

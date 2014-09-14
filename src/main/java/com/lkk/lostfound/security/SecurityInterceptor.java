@@ -23,19 +23,22 @@ public class SecurityInterceptor extends AbstractInterceptor {
 		Method method = action.getClass().getMethod(proxy.getMethod());
 		RequiresAuthentication methodAnnotation = method
 				.getAnnotation(RequiresAuthentication.class);
+		RequiresAuthentication clazzAnnotation = action.getClass()
+				.getAnnotation(RequiresAuthentication.class);
+		RequiresAuthentication annotation = methodAnnotation == null ? clazzAnnotation
+				: methodAnnotation;
 
-		if (methodAnnotation != null && user == null)
+		if (annotation != null && user == null)
 			return NO_LOGON_RESULT;
-		if (methodAnnotation != null && user != null
-				&& !validate(user, methodAnnotation))
+		if (annotation != null && user != null && !validate(user, annotation))
 			return NO_PERMISSION_RESULT;
 		return invocation.invoke();
 	}
 
 	// 判断是否能够通过验证
-	public boolean validate(User user, RequiresAuthentication method) {
-		if (null != method
-				&& Arrays.asList(method.value()).contains(user.getRole()))
+	public boolean validate(User user, RequiresAuthentication annotation) {
+		if (null != annotation
+				&& Arrays.asList(annotation.value()).contains(user.getRole()))
 			return true;
 		return false;
 	}

@@ -6,7 +6,8 @@
 <struts>
 
 	<!-- 带有身份验证的基础包 -->
-	<package name="home-package" extends="struts-default">
+	<package name="home-package" extends="struts-default"
+		namespace="/">
 		<interceptors>
 			<interceptor name="security"
 				class="com.lkk.lostfound.security.SecurityInterceptor"></interceptor>
@@ -19,9 +20,20 @@
 		<default-interceptor-ref name="securedBasicStack"></default-interceptor-ref>
 
 		<global-results>
-			<result name="notLogon">/WEB-INF/jsp/notLogon.jsp</result>
-			<result name="noPermission">/WEB-INF/jsp/noPermission.jsp</result>
+			<result name="notLogon" type="redirectAction">
+				<param name="actionName">notLogon</param>
+			</result>
+			<result name="noPermission" type="redirectAction">
+				<param name="actionName">noPermission</param>
+			</result>
 		</global-results>
+
+		<action name="notLogon">
+			<result>/WEB-INF/jsp/notLogon.jsp</result>
+		</action>
+		<action name="noPermission">
+			<result>/WEB-INF/jsp/noPermission.jsp</result>
+		</action>
 	</package>
 
 	<!-- Home -->
@@ -39,6 +51,10 @@
 		<action name="confirm" class="com.lkk.lostfound.action.user.LogonAction"
 			method="confirm">
 			<result name="input">/WEB-INF/jsp/user/logon.jsp</result>
+			<result name="adminIndex" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/admin</param>
+			</result>
 			<result name="success" type="redirectAction">
 				<param name="actionName">index</param>
 				<param name="namespace">/</param>
@@ -123,14 +139,14 @@
 
 	<!-- Admin Home -->
 	<package name="admin-home" namespace="/admin" extends="home-package">
-		<action name="index">
+		<action name="index" class="com.lkk.lostfound.action.AdminIndexAction">
 			<result name="success">/WEB-INF/jsp/admin/index.jsp</result>
 		</action>
 	</package>
 
 	<!-- Admin Announcement -->
 	<package name="admin-anno" namespace="/admin/announcement"
-		extends="struts-default">
+		extends="home-package">
 		<action name="index"
 			class="com.lkk.lostfound.action.announcement.IndexAction">
 			<result name="success">/WEB-INF/jsp/admin/announcement/index.jsp

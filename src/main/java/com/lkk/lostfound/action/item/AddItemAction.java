@@ -7,12 +7,15 @@ import com.lkk.lostfound.model.ItemBase;
 import com.lkk.lostfound.model.ItemStatus;
 import com.lkk.lostfound.model.LostItem;
 import com.lkk.lostfound.model.PickedItem;
+import com.lkk.lostfound.model.UserRole;
+import com.lkk.lostfound.security.RequiresAuthentication;
 import com.lkk.lostfound.utils.FileUtils;
 import com.lkk.lostfound.utils.StringUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
 @SuppressWarnings("serial")
+@RequiresAuthentication(value = { UserRole.Admin, UserRole.User })
 public class AddItemAction extends ActionSupport implements Preparable {
 	private String clazz;
 	private ItemBase item;

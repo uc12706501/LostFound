@@ -3,10 +3,13 @@ package com.lkk.lostfound.action.announcement;
 import java.util.List;
 
 import com.lkk.lostfound.dao.AnnouncementDao;
+import com.lkk.lostfound.model.UserRole;
+import com.lkk.lostfound.security.RequiresAuthentication;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
 @SuppressWarnings("serial")
+@RequiresAuthentication(UserRole.Admin)
 public class GetIndexAnnosAction extends ActionSupport implements Preparable {
 	private AnnouncementDao announcementDao;
 	private List<Long> ids;

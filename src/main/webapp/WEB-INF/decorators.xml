@@ -16,6 +16,8 @@
 	</decorator>
 	<decorator name="main-base" page="main-base.jsp">
 		<pattern>/user/*</pattern>
+		<pattern>/*/notLogon.action</pattern>
+		<pattern>/*/noPermission.action</pattern>
 	</decorator>
 	<decorator name="main" page="main.jsp">
 		<pattern>/*</pattern>

@@ -6,7 +6,9 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="alert alert-danger">
-					<p class="text-center">对不起，需要登录之后才能执行该操作！</p>
+					<p class="text-center">
+						<b>对不起，需要登录之后才能执行该操作！</b>
+					</p>
 				</div>
 
 				<s:url action="index" namespace="/" var="indexUrl"></s:url>
