@@ -78,6 +78,11 @@
 				<param name="namespace">/</param>
 			</result>
 		</action>
+
+		<action name="changePwd"
+			class="com.lkk.lostfound.action.user.ChangePasswordAction">
+			<result name="input">/WEB-INF/jsp/user/changePassword.jsp</result>
+		</action>
 	</package>
 
 	<!-- Item -->
@@ -120,6 +125,10 @@
 		</action>
 		<action name="itemsList" class="com.lkk.lostfound.action.item.ItemsListAction">
 			<result>/WEB-INF/jsp/item/listItems.jsp</result>
+		</action>
+
+		<action name="myitems" class="com.lkk.lostfound.action.item.UserItemsAction">
+			<result>/WEB-INF/jsp/item/myitems.jsp</result>
 		</action>
 	</package>
 

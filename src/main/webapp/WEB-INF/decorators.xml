@@ -22,4 +22,8 @@
 	<decorator name="main" page="main.jsp">
 		<pattern>/*</pattern>
 	</decorator>
+	<decorator name="usercenter" page="usercenter.jsp">
+		<pattern>/item/myitems.*</pattern>
+		<pattern>/user/changePwd.*</pattern>
+	</decorator>
 </decorators>

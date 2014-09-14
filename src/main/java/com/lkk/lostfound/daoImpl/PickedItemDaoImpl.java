@@ -3,11 +3,11 @@ package com.lkk.lostfound.daoImpl;
 import com.lkk.lostfound.dao.PickedItemDao;
 import com.lkk.lostfound.model.PickedItem;
 
-public class PickedItemDaoImpl extends DaoBaseImpl<PickedItem> implements
+public class PickedItemDaoImpl extends ItemDaoBaseImpl<PickedItem> implements
 		PickedItemDao {
 
 	@Override
-	Class getEntityClass() {
+	Class<PickedItem> getEntityClass() {
 		return PickedItem.class;
 	}
 

@@ -60,8 +60,7 @@
 							<a href="<s:property value="logoffUrl"/>"><i
 								class="fa fa-sign-out fa-fw"></i> <s:text
 									name="admin.headnav.logout"></s:text></a></li>
-					</ul> <!-- /.dropdown-user --></li>
-				<!-- /.dropdown -->
+					</ul></li>
 			</ul>
 			<!-- /.navbar-top-links -->
 			<div class="navbar-default sidebar" role="navigation">
@@ -98,7 +97,7 @@
 											name="admin.nav.LostItemFound"></s:text></a></li>
 								<li><a href="morris.html"><s:text
 											name="admin.nav.LostItemNotFound"></s:text></a></li>
-							</ul> <!-- /.nav-second-level --></li>
+							</ul></li>
 						<li><a href="#"><i class="fa fa-group fa-fw"></i> <s:text
 									name="admin.nav.PickedItemManage"></s:text><span
 								class="fa arrow"></span></a>
@@ -110,15 +109,12 @@
 								Multi-Level Dropdown<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="#">Second Level Item</a></li>
-								<li><a href="#">Second Level Item</a></li>
 								<li><a href="#">Third Level <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
 										<li><a href="#">Third Level Item</a></li>
 										<li><a href="#">Third Level Item</a></li>
-										<li><a href="#">Third Level Item</a></li>
-										<li><a href="#">Third Level Item</a></li>
-									</ul> <!-- /.nav-third-level --></li>
-							</ul> <!-- /.nav-second-level --></li>
+									</ul></li>
+							</ul></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -131,7 +127,6 @@
 				<div class="col-lg-12">
 					<h1 class="page-header">
 						<decorator:title default="Default Title"></decorator:title>
-						<!-- 						<s:property value="#title" default="Default Title"></s:property> -->
 					</h1>
 				</div>
 			</div>

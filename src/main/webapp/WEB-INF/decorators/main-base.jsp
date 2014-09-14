@@ -49,9 +49,12 @@
 								onclick="location.href='<s:property value="userReg"/>'">注册</button></li>
 					</s:if>
 					<s:else>
-						<li><s:url action="logon" namespace="/user" var="userLogon"></s:url>
+						<li><s:url action="myitems" namespace="/item"
+								var="usercenterUrl">
+								<s:param name="clazz" value="'lostItem'"></s:param>
+							</s:url>
 							<button class="btn btn-success" type="button"
-								onclick="location.href='<s:property value="userLogon"/>'">个人中心</button></li>
+								onclick="location.href='<s:property value="usercenterUrl"/>'">个人中心</button></li>
 						<li><s:url action="logoff" namespace="/user" var="logoffUrl"></s:url>
 							<button class="btn btn-success" type="button"
 								onclick="location.href='<s:property value="logoffUrl"/>'">注销</button></li>

@@ -90,7 +90,7 @@ public class ItemBase {
 
 	@ManyToOne
 	// TODO 不可为空
-	@JoinColumn(name = "user_id", nullable = true)
+	@JoinColumn(name = "user_id", nullable = false)
 	public User getPublisher() {
 		return publisher;
 	}

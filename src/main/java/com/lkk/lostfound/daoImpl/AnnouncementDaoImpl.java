@@ -3,8 +3,6 @@ package com.lkk.lostfound.daoImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.javatuples.Pair;
-
 import com.lkk.lostfound.dao.AnnouncementDao;
 import com.lkk.lostfound.model.Announcement;
 
