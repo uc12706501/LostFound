@@ -56,8 +56,10 @@
 						<li><a href="#"><i class="fa fa-user fa-fw"></i> <s:text
 									name="admin.headnav.profile"></s:text></a></li>
 						<li class="divider"></li>
-						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>
-								<s:text name="admin.headnav.logout"></s:text></a></li>
+						<li><s:url action="logoff" namespace="/user" var="logoffUrl"></s:url>
+							<a href="<s:property value="logoffUrl"/>"><i
+								class="fa fa-sign-out fa-fw"></i> <s:text
+									name="admin.headnav.logout"></s:text></a></li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->
 			</ul>
@@ -129,7 +131,7 @@
 				<div class="col-lg-12">
 					<h1 class="page-header">
 						<decorator:title default="Default Title"></decorator:title>
-<!-- 						<s:property value="#title" default="Default Title"></s:property> -->
+						<!-- 						<s:property value="#title" default="Default Title"></s:property> -->
 					</h1>
 				</div>
 			</div>
