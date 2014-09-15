@@ -13,6 +13,7 @@
 		<td>地点</td>
 		<td>发布时间</td>
 		<td>当前状态</td>
+		<td>操作</td>
 	</thead>
 	<tbody>
 		<s:iterator value="items" var="item">
@@ -20,7 +21,14 @@
 				<td><s:property value="name" /></td>
 				<td><s:property value="location" /></td>
 				<td><s:date name="time" /></td>
-				<td></td>
+				<td><s:if test="status.toString()=='NOT_FOUND'">
+						<i class="fa fa-check"></i>
+					</s:if> <s:else>
+						<i class="fa fa-times"></i>
+					</s:else></td>
+				<td>
+					<button class="btn">切换状态</button>
+				</td>
 			</tr>
 		</s:iterator>
 	</tbody>
