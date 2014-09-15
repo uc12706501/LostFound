@@ -108,6 +108,9 @@
 		</action>
 
 		<action name="save" class="com.lkk.lostfound.action.item.AddItemAction">
+			<interceptor-ref name="securedBasicStack">
+				<param name="fileUpload.allowedTypes">image/jpeg,image/gif,image/png</param>
+			</interceptor-ref>
 			<result name="success" type="redirectAction">
 				<param name="actionName">details</param>
 				<param name="clazz">${clazz}</param>
@@ -200,6 +203,9 @@
 
 		<action name="confirmCreate"
 			class="com.lkk.lostfound.action.announcement.CreateAction" method="confirm">
+			<interceptor-ref name="securedBasicStack">
+				<param name="fileUpload.allowedTypes">image/jpeg,image/gif,image/png</param>
+			</interceptor-ref>
 			<result type="redirectAction">index</result>
 			<result name="input">/WEB-INF/jsp/admin/announcement/create.jsp
 			</result>
