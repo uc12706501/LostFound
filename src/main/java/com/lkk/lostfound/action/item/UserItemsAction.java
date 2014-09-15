@@ -5,9 +5,12 @@ import java.util.List;
 import com.lkk.lostfound.dao.LostItemDao;
 import com.lkk.lostfound.dao.PickedItemDao;
 import com.lkk.lostfound.model.ItemBase;
+import com.lkk.lostfound.model.UserRole;
+import com.lkk.lostfound.security.RequiresAuthentication;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
+@RequiresAuthentication(value = { UserRole.Admin, UserRole.User })
 public class UserItemsAction extends ActionSupport {
 
 	private String clazz;
