@@ -47,5 +47,3 @@
 		</div>
 	</div>
 </s:form>
-
-<s:debug></s:debug>
