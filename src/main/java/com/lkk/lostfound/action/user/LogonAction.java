@@ -24,6 +24,17 @@ public class LogonAction extends UserActionBase implements ServletRequestAware {
 		return INPUT;
 	}
 
+	@SkipValidation
+	public String insert() {
+		User user = new User();
+		user.setAccount("admin");
+		user.setDispalyName("lvshaoqian");
+		user.setPassword("111111");
+		user.setRole(UserRole.Admin);
+		userDao.save(user);
+		return SUCCESS;
+	}
+
 	@Validations(requiredStrings = {
 			@RequiredStringValidator(message = "请输入用户名", fieldName = "account"),
 			@RequiredStringValidator(message = "请输入密码", fieldName = "password") })

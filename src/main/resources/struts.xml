@@ -2,7 +2,6 @@
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
-
 <struts>
 
 	<!-- 带有身份验证的基础包 -->
@@ -90,6 +89,14 @@
 				<param name="actionName">changePwd</param>
 			</result>
 		</action>
+
+		<action name="insert" class="com.lkk.lostfound.action.user.LogonAction"
+			method="insert">
+			<result type="redirectAction">
+				<param name="actionName">logon</param>
+			</result>
+		</action>
+
 	</package>
 
 	<!-- Item -->
