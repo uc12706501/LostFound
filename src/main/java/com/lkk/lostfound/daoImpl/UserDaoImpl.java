@@ -20,4 +20,9 @@ public class UserDaoImpl extends DaoBaseImpl<User> implements UserDao {
 		else
 			return null;
 	}
+
+	public void changePasswored(User user, String newPassword) {
+		user.setPassword(newPassword);
+		getHibernateTemplate().saveOrUpdate(user);
+	}
 }

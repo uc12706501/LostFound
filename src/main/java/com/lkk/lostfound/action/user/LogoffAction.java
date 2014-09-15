@@ -9,6 +9,7 @@ import com.lkk.lostfound.security.RequiresAuthentication;
 import com.lkk.lostfound.security.SecurityInterceptor;
 import com.opensymphony.xwork2.ActionSupport;
 
+@SuppressWarnings("serial")
 @RequiresAuthentication(value = { UserRole.Admin, UserRole.User })
 public class LogoffAction extends ActionSupport implements ServletRequestAware {
 

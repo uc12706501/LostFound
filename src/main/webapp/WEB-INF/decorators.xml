@@ -25,5 +25,6 @@
 	<decorator name="usercenter" page="usercenter.jsp">
 		<pattern>/item/myitems.*</pattern>
 		<pattern>/user/changePwd.*</pattern>
+		<pattern>/user/confirmChange.*</pattern>
 	</decorator>
 </decorators>

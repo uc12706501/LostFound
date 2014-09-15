@@ -83,6 +83,13 @@
 			class="com.lkk.lostfound.action.user.ChangePasswordAction">
 			<result name="input">/WEB-INF/jsp/user/changePassword.jsp</result>
 		</action>
+		<action name="confirmChange"
+			class="com.lkk.lostfound.action.user.ChangePasswordAction" method="confirmChange">
+			<result name="input">/WEB-INF/jsp/user/changePassword.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">changePwd</param>
+			</result>
+		</action>
 	</package>
 
 	<!-- Item -->

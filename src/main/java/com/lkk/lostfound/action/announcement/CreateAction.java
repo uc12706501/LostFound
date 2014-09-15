@@ -4,12 +4,9 @@ import java.io.File;
 
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
-import com.lkk.lostfound.model.Announcement;
 import com.lkk.lostfound.model.UserRole;
 import com.lkk.lostfound.security.RequiresAuthentication;
 import com.lkk.lostfound.utils.*;
-import com.opensymphony.xwork2.ModelDriven;
-import com.opensymphony.xwork2.Preparable;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
 
