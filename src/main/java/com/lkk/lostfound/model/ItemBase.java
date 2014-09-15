@@ -72,7 +72,7 @@ public class ItemBase {
 	}
 
 	@Lob
-	@Column(name = "item_image")
+	@Column(name = "item_image", length = 2097152)
 	public byte[] getImage() {
 		return image;
 	}

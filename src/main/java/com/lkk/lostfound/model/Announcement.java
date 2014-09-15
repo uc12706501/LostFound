@@ -19,7 +19,7 @@ public class Announcement {
 		return id;
 	}
 
-	@Column(name = "announcement_image", nullable = false)
+	@Column(name = "announcement_image", nullable = false, length = 4194304)
 	@Lob
 	public byte[] getImage() {
 		return image;
