@@ -3,6 +3,8 @@ package com.lkk.lostfound.action.announcement;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
+import com.lkk.lostfound.utils.FileUtils;
+
 public class GetImageAction extends SingleAnnouncementActionBase {
 	/**
 	 *
@@ -13,7 +15,6 @@ public class GetImageAction extends SingleAnnouncementActionBase {
 	public InputStream getInputStream() {
 		if (model != null && model.getImage() != null)
 			return new ByteArrayInputStream(model.getImage());
-		// TODO 添加默认图片的返回
-		return null;
+		return FileUtils.getNoImageInputStream("No Image");
 	}
 }

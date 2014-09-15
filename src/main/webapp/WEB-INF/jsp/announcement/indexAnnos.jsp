@@ -14,6 +14,9 @@
 						data-slide-to='<s:property value="%{#st.index}"/>'
 						data-target="#myCarousel"></li>
 				</s:iterator>
+				<s:if test="ids.size==0">
+					<li class="active" data-slide-to="1" data-target="#myCarousel"></li>
+				</s:if>
 			</ol>
 
 			<!-- Carousel items -->
@@ -27,6 +30,14 @@
 						<img src='<s:property value="imgUrl"/>' class="full" />
 					</div>
 				</s:iterator>
+				<s:if test="ids.size==0">
+					<div class="item active">
+						<s:url action="getImage" var="emptyimgUrl"
+							namespace="/admin/announcement">
+						</s:url>
+						<img src='<s:property value="emptyimgUrl"/>' class="full" />
+					</div>
+				</s:if>
 			</div>
 
 			<!-- Carousel nav -->

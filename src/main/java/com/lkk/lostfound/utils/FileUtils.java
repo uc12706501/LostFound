@@ -1,6 +1,12 @@
 package com.lkk.lostfound.utils;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.io.*;
+
+import javax.imageio.ImageIO;
 
 public class FileUtils {
 	public static byte[] getBytesFromFile(File file) throws IOException {
@@ -27,5 +33,29 @@ public class FileUtils {
 				outputStream.close();
 		}
 		return bytes;
+	}
+
+	public static InputStream getNoImageInputStream(String text) {
+		try {
+			BufferedImage bi = new BufferedImage(120, 40,
+					BufferedImage.TYPE_INT_RGB);
+			Graphics g = bi.getGraphics();
+
+			g.setColor(Color.WHITE);
+			g.fillRect(0, 0, 120, 40);
+			g.setColor(Color.BLACK);
+			g.setFont(new Font("Serif", Font.BOLD, 22));
+			g.drawString(text, 5, 35);
+
+			File tempImg = File.createTempFile("tempImg", "jpg");
+			tempImg.deleteOnExit();
+			ImageIO.write(bi, "jpeg", tempImg);
+
+			return new FileInputStream(tempImg);
+
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
 	}
 }

@@ -9,7 +9,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
 @SuppressWarnings("serial")
-@RequiresAuthentication(UserRole.Admin)
 public class GetIndexAnnosAction extends ActionSupport implements Preparable {
 	private AnnouncementDao announcementDao;
 	private List<Long> ids;
