@@ -96,4 +96,5 @@
 	<bean name="logonAction" class="com.lkk.lostfound.action.user.LogonAction"></bean>
 	<bean name="registerAction" class="com.lkk.lostfound.action.user.RegisterAction"></bean>
 	<bean name="userItems" class="com.lkk.lostfound.action.item.UserItemsAction"></bean>
+	<bean name="switchStatusAction" class="com.lkk.lostfound.action.item.SwitchStatusAction"></bean>
 </beans>

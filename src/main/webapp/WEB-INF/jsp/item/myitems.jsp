@@ -22,13 +22,15 @@
 				<td><s:property value="location" /></td>
 				<td><s:date name="time" /></td>
 				<td><s:if test="status.toString()=='NOT_FOUND'">
-						<i class="fa fa-check"></i>
+						<i class="fa fa-check"></i>已找到
 					</s:if> <s:else>
-						<i class="fa fa-times"></i>
+						<i class="fa fa-times"></i>未找到
 					</s:else></td>
-				<td>
-					<button class="btn">切换状态</button>
-				</td>
+				<td><s:url action="switchStatus" namespace="/item"
+						var="switchUrl" escapeAmp="false">
+						<s:param name="clazz" value="clazz"></s:param>
+						<s:param name="id" value="id"></s:param>
+					</s:url> <a class="btn btn-info" href="<s:property value="switchUrl"/>">切换状态</a></td>
 			</tr>
 		</s:iterator>
 	</tbody>

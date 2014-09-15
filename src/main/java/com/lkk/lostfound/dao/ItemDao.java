@@ -4,4 +4,5 @@ import com.lkk.lostfound.model.ItemBase;
 
 public interface ItemDao extends DaoBase<ItemBase> {
 
+	void switchStatus(long id);
 }

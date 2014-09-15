@@ -137,6 +137,15 @@
 		<action name="myitems" class="com.lkk.lostfound.action.item.UserItemsAction">
 			<result>/WEB-INF/jsp/item/myitems.jsp</result>
 		</action>
+
+		<action name="switchStatus" class="com.lkk.lostfound.action.item.SwitchStatusAction">
+			<result type="redirectAction">
+				<param name="actionName">myitems</param>
+				<param name="namespace">/item</param>
+				<param name="clazz">${clazz}</param>
+			</result>
+		</action>
+
 	</package>
 
 	<!-- Announcement -->
