@@ -337,3 +337,7 @@ img.full {
 	border-bottom: 0;
 	padding-left: 30px;
 }
+
+.carousel-inner>.item>img {
+	width: 100%;
+}

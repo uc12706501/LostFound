@@ -10,8 +10,6 @@
 	<s:form cssClass="form-horizontal" role="form" action="confirmCreate"
 		method="post" enctype="multipart/form-data" theme="simple">
 		<s:hidden name="id" value="%{id}"></s:hidden>
-		<s:actionmessage />
-
 		<div class="form-group">
 			<label class="col-sm-2 control-label"><s:text
 					name="admin.anno.picUrl"></s:text></label>
@@ -31,7 +29,8 @@
 					var="imageLink">
 					<s:param name="id" value="%{id}" />
 				</s:url>
-				<img alt="anno pic" src='<s:property value="imageLink"/>' style="max-width: 100%;width: auto;">
+				<img alt="anno pic" src='<s:property value="imageLink"/>'
+					style="max-width: 100%;width: auto;">
 			</div>
 		</div>
 

@@ -19,8 +19,9 @@ import com.lkk.lostfound.utils.FileUtils;
 import com.lkk.lostfound.utils.StringUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
+import com.opensymphony.xwork2.validator.DelegatingValidatorContext;
+import com.opensymphony.xwork2.validator.validators.VisitorFieldValidator;
 
-@SuppressWarnings("serial")
 @RequiresAuthentication(value = { UserRole.Admin, UserRole.User })
 public class AddItemAction extends ActionSupport implements Preparable,
 		ServletRequestAware {
@@ -28,7 +29,6 @@ public class AddItemAction extends ActionSupport implements Preparable,
 	private ItemBase item;
 	private File upload;
 	private String uploadFileName;
-	@SuppressWarnings("unused")
 	private String uploadContentType;
 	private ItemDao itemDao;
 	private long id;
@@ -58,8 +58,6 @@ public class AddItemAction extends ActionSupport implements Preparable,
 		// visitorFieldValidator
 		// .setValidatorContext(new DelegatingValidatorContext(this));
 		// visitorFieldValidator.setFieldName(clazz);
-		// visitorFieldValidator.setValueStack(ActionContext.getContext()
-		// .getValueStack());
 		// visitorFieldValidator.validate(this);
 
 		if (hasErrors())

@@ -64,7 +64,6 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 		return new Pair<List<T>, Integer>(results, count);
 	}
 
-	// TODO 考虑更好的实现
 	private List<T> page(Integer pageIndex, Integer pageSize, String queryString) {
 		List<T> results = null;
 

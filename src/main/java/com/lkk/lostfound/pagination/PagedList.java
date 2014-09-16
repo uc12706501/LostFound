@@ -143,19 +143,16 @@ public class PagedList<T> implements Iterator<T> {
 		this.maxDisplayLink = maxDisplayLink;
 	}
 
-	// TODO 实现iterator接口
+	// TODO 实现iterator接口的以下三个方法
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	public T next() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public void remove() {
-		// TODO Auto-generated method stub
 
 	}
 

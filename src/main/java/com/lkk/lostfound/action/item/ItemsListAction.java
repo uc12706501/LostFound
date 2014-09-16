@@ -11,7 +11,6 @@ import com.lkk.lostfound.model.LostItem;
 import com.lkk.lostfound.model.PickedItem;
 import com.lkk.lostfound.pagination.PagedList;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.Preparable;
 
 @SuppressWarnings("serial")
 public class ItemsListAction extends ActionSupport {
