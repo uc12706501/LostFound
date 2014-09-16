@@ -18,26 +18,31 @@
 
 	<!--搜索框-->
 	<div class="row">
-		<div class="well well-index" style="background:none;box-shadow:none;">
-			<s:form cssClass="form-inline" namespace="/item" action="itemsList"
-				id="search">
-				<div class="form-group" style="width:auto;">
-					<select class="form-control" name="clazz">
-						<option value="lostItem">搜索失物</option>
-						<option value="pickedItem">搜索招领</option>
-					</select>
-				</div>
-				<div class="form-group multi-search">
-					<div class="input-group">
-						<s:textfield cssClass="form-control" theme="simple" name="filter"></s:textfield>
-						<span class="input-group-btn">
-							<button class="btn btn-header" type="submit">
-								<span class="glyphicon glyphicon-search"></span>
-							</button>
-						</span>
+		<div class="col-md-6 col-md-offset-3">
+			<div class="well well-index" style="background:none;box-shadow:none;">
+				<s:form cssClass="form-horizontal" namespace="/item"
+					action="itemsList" id="search">
+					<div class="form-group">
+						<div class="col-xs-4" style="padding-right: 0;">
+							<select class="form-control" name="clazz">
+								<option value="lostItem">搜索失物</option>
+								<option value="pickedItem">搜索招领</option>
+							</select>
+						</div>
+						<div class="col-xs-8" style="padding-left: 0;">
+							<div class="input-group">
+								<s:textfield cssClass="form-control" theme="simple"
+									name="filter"></s:textfield>
+								<span class="input-group-btn">
+									<button class="btn btn-header" type="submit">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</div>
 					</div>
-				</div>
-			</s:form>
+				</s:form>
+			</div>
 		</div>
 	</div>
 
