@@ -8,20 +8,18 @@
 <div class="container-maincontent">
 	<div class="container">
 		<div class="well">
-			<s:form theme="simple" action="save" namespace="/item" method="post"
-				cssClass="form-horizontal" enctype="multipart/form-data">
-				<s:hidden name="clazz" value="%{clazz}"></s:hidden>
+			<s:form theme="simple" action="savePickedItem" namespace="/item"
+				method="post" cssClass="form-horizontal"
+				enctype="multipart/form-data">
 				<fieldset>
 					<legend class="text-center header">招领详情</legend>
-					<s:actionmessage />
-
 					<div class="form-group">
 						<label class="col-md-2 control-label">招领物品名称</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.name"></s:textfield>
+							<s:textfield cssClass="form-control" name="item.name"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.name"></s:fielderror>
+							<s:fielderror fieldName="item.name"></s:fielderror>
 						</div>
 					</div>
 
@@ -29,10 +27,10 @@
 						<label class="col-md-2 control-label">拾获地点</label>
 
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.location"></s:textfield>
+							<s:textfield cssClass="form-control" name="item.location"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.location"></s:fielderror>
+							<s:fielderror fieldName="item.location"></s:fielderror>
 						</div>
 					</div>
 
@@ -40,21 +38,21 @@
 						<!-- TODO 修复同时显示转换错误和输入校验的错误 -->
 						<label class="col-md-2 control-label">拾获时间</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.time"
+							<s:textfield cssClass="form-control" name="item.time"
 								placeholder="日期格式为 2014/8/1"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.time"></s:fielderror>
+							<s:fielderror fieldName="item.time"></s:fielderror>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">物品特点</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.character"></s:textfield>
+							<s:textfield cssClass="form-control" name="item.character"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.character"></s:fielderror>
+							<s:fielderror fieldName="item.character"></s:fielderror>
 						</div>
 					</div>
 
@@ -72,40 +70,40 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">信息来源</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.infoSource"></s:textfield>
+							<s:textfield cssClass="form-control" name="item.infoSource"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.infoSource"></s:fielderror>
+							<s:fielderror fieldName="item.infoSource"></s:fielderror>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">认领地址</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.address"></s:textfield>
+							<s:textfield cssClass="form-control" name="item.address"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.address"></s:fielderror>
+							<s:fielderror fieldName="item.address"></s:fielderror>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-2 control-label">联系电话</label>
 						<div class="col-md-8">
-							<s:textfield cssClass="form-control" name="pickedItem.telphone"></s:textfield>
+							<s:textfield cssClass="form-control" name="item.telphone"></s:textfield>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.telphone"></s:fielderror>
+							<s:fielderror fieldName="item.telphone"></s:fielderror>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">备注</label>
 						<div class="col-md-8">
 							<s:textarea cssClass="form-control" rows="5"
-								name="pickedItem.remark"></s:textarea>
+								name="item.remark"></s:textarea>
 						</div>
 						<div class="col-md-2">
-							<s:fielderror fieldName="pickedItem.remark"></s:fielderror>
+							<s:fielderror fieldName="item.remark"></s:fielderror>
 						</div>
 					</div>
 					<div class="form-group">

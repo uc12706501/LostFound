@@ -67,27 +67,12 @@
 	</bean>
 
 	<!-- Actions -->
-	<bean name="anno-create" class="com.lkk.lostfound.action.announcement.CreateAction">
-		<property name="announcementDao" ref="announcementDao"></property>
-	</bean>
-	<bean name="anno-index" class="com.lkk.lostfound.action.announcement.IndexAction">
-		<property name="announcementDao" ref="announcementDao"></property>
-	</bean>
-	<bean name="anno-getImage" class="com.lkk.lostfound.action.announcement.GetImageAction">
-		<property name="announcementDao" ref="announcementDao"></property>
-	</bean>
-	<bean name="saveMessageAction" class="com.lkk.lostfound.action.message.SaveMessageAction">
-		<property name="itemDao" ref="itemDao"></property>
-		<property name="messageDao" ref="messageDao"></property>
-	</bean>
-	<bean name="addItemAction" class="com.lkk.lostfound.action.item.AddItemAction">
-		<property name="itemDao" ref="itemDao"></property>
-	</bean>
-	<bean name="itemDetails" class="com.lkk.lostfound.action.item.ItemDetails">
-		<property name="itemDao" ref="itemDao"></property>
-	</bean>
-	<bean name="getImageAction" class="com.lkk.lostfound.action.item.GetImageAction">
-	</bean>
+	<bean name="anno-create" class="com.lkk.lostfound.action.announcement.CreateAction"></bean>
+	<bean name="anno-index" class="com.lkk.lostfound.action.announcement.IndexAction"></bean>
+	<bean name="anno-getImage" class="com.lkk.lostfound.action.announcement.GetImageAction"></bean>
+	<bean name="saveMessageAction" class="com.lkk.lostfound.action.message.SaveMessageAction"></bean>
+	<bean name="itemDetails" class="com.lkk.lostfound.action.item.ItemDetails"></bean>
+	<bean name="getImageAction" class="com.lkk.lostfound.action.item.GetImageAction"></bean>
 	<bean name="getIndexAnnosAction"
 		class="com.lkk.lostfound.action.announcement.GetIndexAnnosAction">
 	</bean>
@@ -97,4 +82,10 @@
 	<bean name="registerAction" class="com.lkk.lostfound.action.user.RegisterAction"></bean>
 	<bean name="userItems" class="com.lkk.lostfound.action.item.UserItemsAction"></bean>
 	<bean name="switchStatusAction" class="com.lkk.lostfound.action.item.SwitchStatusAction"></bean>
+	<bean name="addLostItemAction" class="com.lkk.lostfound.action.item.AddLostItemAction">
+		<property name="itemDao" ref="lostItemDao"></property>
+	</bean>
+	<bean name="addPickedItem" class="com.lkk.lostfound.action.item.AddPickedItemAction">
+		<property name="itemDao" ref="lostItemDao"></property>
+	</bean>
 </beans>

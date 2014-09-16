@@ -28,9 +28,7 @@
 					<!--大图标-->
 					<div class="col-md-4">
 						<div align="center">
-							<s:url action="add" namespace="/item" var="lostUrl">
-								<s:param name="clazz" value="'lostItem'"></s:param>
-							</s:url>
+							<s:url action="addLostItem" namespace="/item" var="lostUrl"></s:url>
 							<button class="btn btn-default btn-huge" type="button"
 								onclick="location.href='<s:property value="lostUrl"/>'">
 								<i class="fa fa-search icon-huge"></i>
@@ -46,8 +44,7 @@
 					<!--大图标-->
 					<div class="col-md-4">
 						<div align="center">
-							<s:url action="add" namespace="/item" var="pickedUrl">
-								<s:param name="clazz" value="'pickedItem'"></s:param>
+							<s:url action="addPickedItem" namespace="/item" var="pickedUrl">
 							</s:url>
 							<button class="btn btn-default btn-huge"
 								onclick="location.href='<s:property value="pickedUrl"/>'"

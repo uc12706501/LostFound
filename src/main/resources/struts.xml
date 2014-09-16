@@ -101,30 +101,14 @@
 
 	<!-- Item -->
 	<package name="item" namespace="/item" extends="home-package">
-		<action name="add" class="com.lkk.lostfound.action.item.AddItemAction"
-			method="input">
-			<result name="pickedItem">/WEB-INF/jsp/item/pickeditem-create.jsp</result>
-			<result name="lostItem">/WEB-INF/jsp/item/lostitem-create.jsp</result>
-		</action>
 
-		<action name="save" class="com.lkk.lostfound.action.item.AddItemAction">
-			<interceptor-ref name="securedBasicStack">
-				<param name="fileUpload.allowedTypes">image/jpeg,image/gif,image/png</param>
-			</interceptor-ref>
-			<result name="success" type="redirectAction">
-				<param name="actionName">details</param>
-				<param name="clazz">${clazz}</param>
-				<param name="id">${id}</param>
-			</result>
-			<result name="pickedItem">/WEB-INF/jsp/item/pickeditem-create.jsp</result>
-			<result name="lostItem">/WEB-INF/jsp/item/lostitem-create.jsp</result>
-		</action>
-
+		<!-- 物品详情 -->
 		<action name="details" class="com.lkk.lostfound.action.item.ItemDetails">
 			<result name="pickedItem">/WEB-INF/jsp/item/pickeditem-details.jsp</result>
 			<result name="lostItem">/WEB-INF/jsp/item/lostitem-details.jsp</result>
 		</action>
 
+		<!-- 获取图片 -->
 		<action name="getImage" class="com.lkk.lostfound.action.item.GetImageAction">
 			<result name="success" type="stream">
 				<param name="contentType">image</param>
@@ -132,6 +116,7 @@
 			</result>
 		</action>
 
+		<!-- 物品列表 -->
 		<action name="lostItems" class="com.lkk.lostfound.action.item.ItemsListAction">
 			<param name="clazz">lostItem</param>
 			<result>/WEB-INF/jsp/item/listItems.jsp</result>
@@ -144,10 +129,12 @@
 			<result>/WEB-INF/jsp/item/listItems.jsp</result>
 		</action>
 
+		<!-- 个人中心的物品列表 -->
 		<action name="myitems" class="com.lkk.lostfound.action.item.UserItemsAction">
 			<result>/WEB-INF/jsp/item/myitems.jsp</result>
 		</action>
 
+		<!-- 切换物品状态 -->
 		<action name="switchStatus" class="com.lkk.lostfound.action.item.SwitchStatusAction">
 			<result type="redirectAction">
 				<param name="actionName">myitems</param>
@@ -156,6 +143,33 @@
 			</result>
 		</action>
 
+		<!-- 添加失物 -->
+		<action name="addLostItem" class="com.lkk.lostfound.action.item.AddLostItemAction">
+			<result name="input">/WEB-INF/jsp/item/createLostItem.jsp</result>
+		</action>
+		<action name="saveLostItem" class="com.lkk.lostfound.action.item.AddLostItemAction"
+			method="save">
+			<result name="input">/WEB-INF/jsp/item/createLostItem.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">details</param>
+				<param name="clazz">lostItem</param>
+				<param name="id">${id}</param>
+			</result>
+		</action>
+		<!-- 添加招领 -->
+		<action name="addPickedItem"
+			class="com.lkk.lostfound.action.item.AddPickedItemAction">
+			<result name="input">/WEB-INF/jsp/item/createPickedItem.jsp</result>
+		</action>
+		<action name="savePickedItem"
+			class="com.lkk.lostfound.action.item.AddPickedItemAction" method="save">
+			<result name="input">/WEB-INF/jsp/item/createPickedItem.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">details</param>
+				<param name="clazz">pickedItem</param>
+				<param name="id">${id}</param>
+			</result>
+		</action>
 	</package>
 
 	<!-- Announcement -->
