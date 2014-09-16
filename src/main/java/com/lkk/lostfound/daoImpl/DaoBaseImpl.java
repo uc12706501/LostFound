@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Property;
 import org.javatuples.Pair;
@@ -74,11 +75,14 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 		return getHibernateTemplate().executeFind(new HibernateCallback() {
 			public Object doInHibernate(org.hibernate.Session session)
 					throws HibernateException, SQLException {
+
 				Criteria criteria = session.createCriteria(getEntityClass());
+				// 过滤
 				if (params != null && params.size() > 0)
 					for (String field : params.keySet())
 						criteria.add(Property.forName(field).eq(
 								params.get(field)));
+				// 排序
 				if (propertyName != null && propertyName.length > 0) {
 					switch (order) {
 					case ASC:
@@ -91,6 +95,7 @@ public abstract class DaoBaseImpl<T> extends HibernateDaoSupport implements
 						break;
 					}
 				}
+				// 分页
 				criteria.setFirstResult((index - 1) * size);
 				criteria.setMaxResults(size);
 				return criteria.list();
