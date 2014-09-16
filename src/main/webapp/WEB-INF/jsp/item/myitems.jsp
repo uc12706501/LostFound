@@ -18,7 +18,11 @@
 	<tbody>
 		<s:iterator value="items" var="item">
 			<tr>
-				<td><s:property value="name" /></td>
+				<td><s:url action="details" namespace="/item" var="detailsUrl" escapeAmp="false">
+						<s:param name="clazz" value="clazz"></s:param>
+						<s:param name="id" value="id"></s:param>
+					</s:url> <a href='<s:property value="detailsUrl"/>'><s:property
+							value="name" /></a></td>
 				<td><s:property value="location" /></td>
 				<td><s:date name="time" /></td>
 				<td><s:if test="status.toString()=='NOT_FOUND'">
