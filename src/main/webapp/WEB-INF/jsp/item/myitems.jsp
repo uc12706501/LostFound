@@ -25,7 +25,7 @@
 							value="name" /></a></td>
 				<td><s:property value="location" /></td>
 				<td><s:date name="time" /></td>
-				<td><s:if test="status.toString()=='NOT_FOUND'">
+				<td><s:if test="status.toString()=='HAS_FOUND'">
 						<i class="fa fa-check"></i>已找到
 					</s:if> <s:else>
 						<i class="fa fa-times"></i>未找到
