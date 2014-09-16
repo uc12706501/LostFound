@@ -1,5 +1,6 @@
 package com.lkk.lostfound.action.item;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.javatuples.Pair;
@@ -7,9 +8,11 @@ import org.javatuples.Pair;
 import com.lkk.lostfound.dao.LostItemDao;
 import com.lkk.lostfound.dao.PickedItemDao;
 import com.lkk.lostfound.model.ItemBase;
+import com.lkk.lostfound.model.ItemStatus;
 import com.lkk.lostfound.model.LostItem;
 import com.lkk.lostfound.model.PickedItem;
 import com.lkk.lostfound.pagination.PagedList;
+import com.lkk.lostfound.utils.StringUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
@@ -26,15 +29,21 @@ public class ItemsListAction extends ActionSupport {
 	protected String filter;
 
 	public void prepare() throws Exception {
+		HashMap<String, Object> params = new HashMap<String, Object>();
+
+		params.put("status", ItemStatus.NOT_FOUND);
+		if (!StringUtils.isNullOrEmpty(filter))
+			params.put("name", filter);
+
 		if (clazz.equals("lostItem")) {
 			Pair<List<LostItem>, Integer> queryResults = lostItemDao
-					.getPartial(pageIndex, PAGE_SIZE, "name", filter);
+					.getPartial(pageIndex, PAGE_SIZE, params);
 			items = new PagedList<LostItem>(PAGE_SIZE, pageIndex,
 					queryResults.getValue1(), queryResults.getValue0());
 		}
 		if (clazz.equals("pickedItem")) {
 			Pair<List<PickedItem>, Integer> queryResults = pickedItemDao
-					.getPartial(pageIndex, PAGE_SIZE, "name", filter);
+					.getPartial(pageIndex, PAGE_SIZE, params);
 			items = new PagedList<PickedItem>(PAGE_SIZE, pageIndex,
 					queryResults.getValue1(), queryResults.getValue0());
 		}

@@ -10,6 +10,7 @@ import org.apache.struts2.interceptor.validation.SkipValidation;
 
 import com.lkk.lostfound.dao.ItemDaoBase;
 import com.lkk.lostfound.model.ItemBase;
+import com.lkk.lostfound.model.ItemStatus;
 import com.lkk.lostfound.model.User;
 import com.lkk.lostfound.security.SecurityInterceptor;
 import com.lkk.lostfound.utils.FileUtils;
@@ -51,11 +52,13 @@ public class AddItemActionBase<T extends ItemBase> extends ActionSupport
 			User user = (User) request.getSession(false).getAttribute(
 					SecurityInterceptor.USER_OBJECT);
 			getItem().setPublisher(user);
+			getItem().setStatus(ItemStatus.NOT_FOUND);
 			id = itemDao.save(getItem());
 			return SUCCESS;
 		} else {
 			addFieldError("upload", "该字段不可为空");
 			return INPUT;
+			
 		}
 	}
 

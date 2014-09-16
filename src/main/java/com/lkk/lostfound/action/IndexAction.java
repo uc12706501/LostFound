@@ -1,9 +1,11 @@
 package com.lkk.lostfound.action;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.lkk.lostfound.dao.LostItemDao;
 import com.lkk.lostfound.dao.PickedItemDao;
+import com.lkk.lostfound.model.ItemStatus;
 import com.lkk.lostfound.model.LostItem;
 import com.lkk.lostfound.model.PickedItem;
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,8 +21,11 @@ public class IndexAction extends ActionSupport implements Preparable {
 	public static final int INDEX_MAX_ITEMS = 6;
 
 	public void prepare() throws Exception {
-		lostItems = lostItemDao.getLasted(INDEX_MAX_ITEMS);
-		pickedItems = pickedItemDao.getLasted(INDEX_MAX_ITEMS);
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("status", ItemStatus.NOT_FOUND);
+
+		lostItems = lostItemDao.getLasted(INDEX_MAX_ITEMS, params);
+		pickedItems = pickedItemDao.getLasted(INDEX_MAX_ITEMS, params);
 	}
 
 	@Override
