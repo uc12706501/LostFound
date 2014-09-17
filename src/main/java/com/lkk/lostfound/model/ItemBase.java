@@ -116,7 +116,6 @@ public class ItemBase {
 	}
 
 	@RequiredFieldValidator(message = "请输入时间")
-	@TypeConversion(converter = "com.lkk.lostfound.converter.DateConverter")
 	public void setTime(Date time) {
 		this.time = time;
 	}
