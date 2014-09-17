@@ -56,9 +56,9 @@ public class AddItemActionBase<T extends ItemBase> extends ActionSupport
 			id = itemDao.save(getItem());
 			return SUCCESS;
 		} else {
-			addFieldError("upload", "该字段不可为空");
+			addFieldError("upload", "请选择文件");
 			return INPUT;
-			
+
 		}
 	}
 
