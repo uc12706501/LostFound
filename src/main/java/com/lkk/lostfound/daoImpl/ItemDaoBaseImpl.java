@@ -22,16 +22,21 @@ public abstract class ItemDaoBaseImpl<T extends ItemBase> extends
 	@SuppressWarnings("unchecked")
 	public T get(final long entityId) {
 
-		return (T) getHibernateTemplate().executeFind(new HibernateCallback() {
+		List result = getHibernateTemplate().executeFind(
+				new HibernateCallback() {
 
-			public Object doInHibernate(Session session)
-					throws HibernateException, SQLException {
-				Criteria criteria = session.createCriteria(getEntityClass());
-				criteria.add(Property.forName("id").eq(entityId));
-				criteria.setFetchMode("messages", FetchMode.EAGER);
-				return criteria.list();
-			}
-		}).get(0);
+					public Object doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Criteria criteria = session
+								.createCriteria(getEntityClass());
+						criteria.add(Property.forName("id").eq(entityId));
+						criteria.setFetchMode("messages", FetchMode.EAGER);
+						return criteria.list();
+					}
+				});
+		if (result != null && result.size() > 0)
+			return (T) result.get(0);
+		return null;
 	}
 
 	public List<T> findByUser(User user) {
