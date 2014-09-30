@@ -88,4 +88,6 @@
 	<bean name="addPickedItem" class="com.lkk.lostfound.action.item.AddPickedItemAction">
 		<property name="itemDao" ref="lostItemDao"></property>
 	</bean>
+	<bean name="deleteAnnoAction" class="com.lkk.lostfound.action.announcement.DeleteAction"></bean>
+	<bean name="deleteItemAction" class="com.lkk.lostfound.action.item.DeleteAction"></bean>
 </beans>

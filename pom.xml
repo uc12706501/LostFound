@@ -28,6 +28,19 @@
 
 
 	<dependencies>
+		<!-- jstl -->
+		<dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
 		<!-- Junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -177,7 +190,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>struts2-archetype-starter</finalName>
+		<finalName>lostfound</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

@@ -77,8 +77,10 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
-								<s:text name="admin.sidebar.dashboard"></s:text></a></li>
+						<li><s:url action="index" namespace="/admin" var="indexUrl"></s:url>
+							<a href="<s:property value="indexUrl"/>"><i
+								class="fa fa-dashboard fa-fw"></i> <s:text
+									name="admin.sidebar.dashboard"></s:text></a></li>
 						<li><a href="#"><i class="fa fa-plus fa-fw"></i> <s:text
 									name="admin.nav.Announcement"></s:text><span class="fa arrow"></span>
 						</a>

@@ -18,7 +18,8 @@
 	<tbody>
 		<s:iterator value="items" var="item">
 			<tr>
-				<td><s:url action="details" namespace="/item" var="detailsUrl" escapeAmp="false">
+				<td><s:url action="details" namespace="/item" var="detailsUrl"
+						escapeAmp="false">
 						<s:param name="clazz" value="clazz"></s:param>
 						<s:param name="id" value="id"></s:param>
 					</s:url> <a href='<s:property value="detailsUrl"/>'><s:property
@@ -34,7 +35,12 @@
 						var="switchUrl" escapeAmp="false">
 						<s:param name="clazz" value="clazz"></s:param>
 						<s:param name="id" value="id"></s:param>
-					</s:url> <a class="btn btn-info" href="<s:property value="switchUrl"/>">切换状态</a></td>
+					</s:url> <a class="btn btn-info" href="<s:property value="switchUrl"/>">切换状态</a>
+					<s:url action="delete" namespace="/item" var="deleteUrl"
+						escapeAmp="false">
+						<s:param name="clazz" value="clazz"></s:param>
+						<s:param name="id" value="id"></s:param>
+					</s:url> <a class="btn btn-danger" href='<s:property value="deleteUrl" />'>删除</a></td>
 			</tr>
 		</s:iterator>
 	</tbody>
