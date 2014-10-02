@@ -107,16 +107,6 @@
 								<li><a href="#"><s:text name="admin.nav.OwnerNotFound"></s:text></a></li>
 								<li><a href="#"><s:text name="admin.nav.OwnerFound"></s:text></a></li>
 							</ul></li>
-						<li><a href="#"><i class="fa fa-sitemap fa-fw"></i>
-								Multi-Level Dropdown<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="#">Second Level Item</a></li>
-								<li><a href="#">Third Level <span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li><a href="#">Third Level Item</a></li>
-										<li><a href="#">Third Level Item</a></li>
-									</ul></li>
-							</ul></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
