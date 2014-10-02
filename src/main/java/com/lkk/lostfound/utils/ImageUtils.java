@@ -14,14 +14,12 @@ import java.io.OutputStream;
 
 import javax.imageio.ImageIO;
 
-/**
- * @author lkk
- *
- */
 public class ImageUtils {
 
 	public static byte[] compress(byte[] source, int width, int height)
 			throws IOException {
+		if (width == 0 && height == 0)
+			return source;
 		ByteArrayInputStream in = new ByteArrayInputStream(source);
 		try {
 			BufferedImage img = ImageIO.read(in);

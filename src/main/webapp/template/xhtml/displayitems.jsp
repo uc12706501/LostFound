@@ -3,8 +3,10 @@
 
 <div class="row">
 	<s:iterator value="parameters.items" status="st">
-		<s:url action="getImage" namespace="/item" var="imgUrl">
+		<s:url action="getImage" namespace="/item" var="imgUrl"
+			escapeAmp="false">
 			<s:param name="id" value="%{id}"></s:param>
+			<s:param name="maxHeight" value="400"></s:param>
 		</s:url>
 		<s:url action="details" namespace="/item" var="detailsUrl"
 			escapeAmp="false">
@@ -31,5 +33,5 @@
 </div>
 <div class="row">
 	</s:if>
-</s:iterator>
+	</s:iterator>
 </div>
