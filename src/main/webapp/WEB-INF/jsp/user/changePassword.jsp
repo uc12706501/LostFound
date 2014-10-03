@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <s:head />
+<title>修改密码</title>
 
 <s:set name="subTitle">修改密码</s:set>
 

@@ -4,6 +4,8 @@
 <%@taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 
+<title><decorator:title></decorator:title></title>
+
 <page:applyDecorator name="main-base">
 	<body>
 		<div class="container-maincontent">
