@@ -24,8 +24,9 @@
 				<s:iterator value="ids" status="st">
 					<div class="item <s:if test="#st.index==0">active</s:if>">
 						<s:url action="getImage" var="imgUrl"
-							namespace="/admin/announcement">
+							namespace="/admin/announcement" escapeAmp="false">
 							<s:param name="id" value="%{top}"></s:param>
+							<s:param name="maxHeight">400</s:param>
 						</s:url>
 						<img src='<s:property value="imgUrl"/>' class="full" />
 					</div>
