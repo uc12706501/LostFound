@@ -26,7 +26,7 @@
 				<div class="row">
 
 					<!--大图标-->
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<div align="center">
 							<s:url action="addLostItem" namespace="/item" var="lostUrl"></s:url>
 							<button class="btn btn-default btn-huge" type="button"
@@ -42,7 +42,7 @@
 					</div>
 
 					<!--大图标-->
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<div align="center">
 							<s:url action="addPickedItem" namespace="/item" var="pickedUrl">
 							</s:url>
@@ -60,7 +60,7 @@
 					</div>
 
 					<!--大图标-->
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<div align="center">
 							<s:url action="index" namespace="/" var="indexUrl"></s:url>
 							<button class="btn btn-default btn-huge" type="button"
