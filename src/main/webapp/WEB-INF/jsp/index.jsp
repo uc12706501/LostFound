@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <head>
-<title>送饭网</title>
+<title>失物招领首页</title>
 <script>
 	$(".nav-link").click(function(e) {
 		e.preventDefault();
