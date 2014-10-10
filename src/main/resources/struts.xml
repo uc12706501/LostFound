@@ -170,6 +170,14 @@
 				<param name="id">${id}</param>
 			</result>
 		</action>
+
+		<!-- 删除物品 -->
+		<action name="delete" class="com.lkk.lostfound.action.item.DeleteAction">
+			<result type="redirectAction">
+				<param name="actionName">myitems</param>
+				<param name="clazz">${clazz}</param>
+			</result>
+		</action>
 	</package>
 
 	<!-- Announcement -->
@@ -230,6 +238,13 @@
 			<result name="success" type="stream">
 				<param name="contentType">image</param>
 				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<action name="delete"
+			class="com.lkk.lostfound.action.announcement.DeleteAction">
+			<result type="redirectAction">
+				<param name="actionName">index</param>
 			</result>
 		</action>
 	</package>

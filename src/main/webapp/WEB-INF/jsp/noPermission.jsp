@@ -1,6 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<title>操作被拒绝</title>
+
 <div class="container-maincontent">
 	<div class="container container-logon">
 		<div class="row">

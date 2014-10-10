@@ -1,6 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<title>
+	<s:if test="clazz=='lostItem'">失物列表</s:if>
+	<s:else>招领列表</s:else>
+</title>
+
 <div class="container-maincontent">
 	<div class="container">
 		<div class="row">

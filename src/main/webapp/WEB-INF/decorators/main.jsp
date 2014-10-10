@@ -7,6 +7,7 @@
 <page:applyDecorator name="main-base">
 	<head>
 <decorator:head></decorator:head>
+<title><decorator:title></decorator:title></title>
 	</head>
 	<body>
 		<s:action name="getIndexAnnos" namespace="/anno" executeResult="true"></s:action>

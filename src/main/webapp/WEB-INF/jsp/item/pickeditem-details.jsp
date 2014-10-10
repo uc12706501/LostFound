@@ -11,8 +11,10 @@
 			<div class="well">
 				<div class="row">
 					<div class="col-md-8">
-						<s:url action="getImage" namespace="/item" var="picUrl">
+						<s:url action="getImage" namespace="/item" var="picUrl"
+							escapeAmp="false">
 							<s:param name="id" value="%{pickedItem.id}"></s:param>
+							<s:param name="maxHeight" value="550"></s:param>
 						</s:url>
 						<img alt="" class="img-responsive"
 							src='<s:property value="%{#picUrl}"></s:property>'>

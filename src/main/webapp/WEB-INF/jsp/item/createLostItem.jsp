@@ -128,7 +128,6 @@
 					</div>
 				</fieldset>
 			</s:form>
-			<s:debug />
 		</div>
 
 		<!--这里填充内容-->

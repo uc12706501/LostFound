@@ -28,6 +28,7 @@ public class CreateAction extends SingleAnnouncementActionBase {
 	@Validations(visitorFields = { @VisitorFieldValidator(fieldName = "model", message = "Default Message", appendPrefix = false) })
 	public String confirm() throws Exception {
 		if (!StringUtils.isNullOrEmpty(uploadFileName)) {
+			// 公告的图片不进行压缩，直接保存
 			model.setImage(FileUtils.getBytesFromFile(upload));
 			if (id == 0)
 				announcementDao.save(model);

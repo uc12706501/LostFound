@@ -14,6 +14,7 @@ import com.lkk.lostfound.model.ItemStatus;
 import com.lkk.lostfound.model.User;
 import com.lkk.lostfound.security.SecurityInterceptor;
 import com.lkk.lostfound.utils.FileUtils;
+import com.lkk.lostfound.utils.ImageUtils;
 import com.lkk.lostfound.utils.StringUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
@@ -47,7 +48,7 @@ public class AddItemActionBase<T extends ItemBase> extends ActionSupport
 
 	public String save() throws IOException {
 		if (!StringUtils.isNullOrEmpty(uploadFileName)) {
-			getItem().setImage(FileUtils.getBytesFromFile(upload));
+			getItem().setImage(ImageUtils.getCompressedImage(upload, 0, 500));
 			// 关联当前用户
 			User user = (User) request.getSession(false).getAttribute(
 					SecurityInterceptor.USER_OBJECT);

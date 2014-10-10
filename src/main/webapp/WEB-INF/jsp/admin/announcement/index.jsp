@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <s:set var="title" value="%{getText('admin.anno.index.title')}"></s:set>
@@ -25,8 +26,12 @@
 					<td><s:url action="create" namespace="/admin/announcement"
 							var="link">
 							<s:param name="id" value="%{#anno.id}" />
+						</s:url> <s:url action="delete" namespace="/admin/announcement"
+							var="deleteUrl">
+							<s:param name="id" value="id"></s:param>
 						</s:url> <a href='<s:property value="link"></s:property>'><s:text
-								name="admin.anno.link.edit"></s:text></a></td>
+								name="admin.anno.link.edit"></s:text></a> <a
+						href='<s:property value="deleteUrl"/>' class="btn btn-danger">删除</a></td>
 				</tr>
 			</s:iterator>
 		</tbody>
