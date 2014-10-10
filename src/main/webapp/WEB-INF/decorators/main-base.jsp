@@ -74,7 +74,7 @@
 	<div class="container-about">
 		<div class="container">
 			<div class="row about">
-				<div class="col-md-6 6text-center">
+				<div class="col-xs-6 6text-center">
 					<div class="row">
 						<div class="col-sm-6">
 							教务处<br> 后勤管理处<br> 计算机科学与技术学院<br> 校党委学生处
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 6text-center">
+				<div class="col-xs-6 6text-center">
 					<b>友情链接</b><br> <a href="#">中国矿业大学</a><br> <a href="#">计算机科学与技术学院</a><br>
 					<a href="#">研究生院</a><br> <a href="#">后勤饮食服务中心</a>
 				</div>
