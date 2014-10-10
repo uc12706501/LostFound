@@ -344,8 +344,8 @@ img.full {
 /*首页响应式图片*/
 .index-div-responsive {
 	width: 100%;
-	height: 0;
-	padding-bottom: 75%;
+	/*height: 0;*/
+	/*padding-bottom: 75%;*/
 	overflow: hidden;
 }
 
