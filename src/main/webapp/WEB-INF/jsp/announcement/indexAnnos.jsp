@@ -4,7 +4,7 @@
 
 <div class="container-alternate" id="top"
 	style="background:#EF9C21;padding-top:4.5em">
-	<div class="container">
+	<div class="container container-nopadding">
 		<div class="carousel slide" data-ride="carousel" id="myCarousel">
 
 			<!-- Carousel indicators -->
