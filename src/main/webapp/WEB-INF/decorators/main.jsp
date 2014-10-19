@@ -27,12 +27,18 @@
 				<div class="row">
 
 					<!--大图标-->
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<div align="center">
 							<s:url action="addLostItem" namespace="/item" var="lostUrl"></s:url>
-							<button class="btn btn-default btn-huge" type="button"
+							<button class="btn btn-default btn-huge visible-lg" type="button"
 								onclick="location.href='<s:property value="lostUrl"/>'">
 								<i class="fa fa-search icon-huge"></i>
+							</button>
+							<button
+								class="btn btn-default btn-small visible-xs visible-sm visible-md"
+								type="button"
+								onclick="location.href='<s:property value="lostUrl"/>'">
+								<i class="fa fa-search icon-small"></i>
 							</button>
 							<div style="height:40px;">
 								<p class="icon-p">
@@ -43,14 +49,19 @@
 					</div>
 
 					<!--大图标-->
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<div align="center">
 							<s:url action="addPickedItem" namespace="/item" var="pickedUrl">
 							</s:url>
-							<button class="btn btn-default btn-huge"
+							<button class="btn btn-default btn-huge visible-lg"
 								onclick="location.href='<s:property value="pickedUrl"/>'"
 								type="button">
 								<i class="fa fa-eye icon-huge"></i>
+							</button>
+							<button class="btn btn-default btn-small visible-xs visible-sm visible-md"
+								onclick="location.href='<s:property value="pickedUrl"/>'"
+								type="button">
+								<i class="fa fa-eye icon-small"></i>
 							</button>
 							<div style="height:40px;">
 								<p class="icon-p">
@@ -61,12 +72,16 @@
 					</div>
 
 					<!--大图标-->
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<div align="center">
 							<s:url action="index" namespace="/" var="indexUrl"></s:url>
-							<button class="btn btn-default btn-huge" type="button"
+							<button class="btn btn-default btn-huge visible-lg" type="button"
 								onClick="location.href='<s:property value="indexUrl"/>'">
 								<i class="fa fa-cube icon-huge"></i>
+							</button>
+							<button class="btn btn-default btn-small visible-xs visible-sm visible-md" type="button"
+								onClick="location.href='<s:property value="indexUrl"/>'">
+								<i class="fa fa-cube icon-small"></i>
 							</button>
 							<div class="icon-p">
 								<p style="color:#555555;">

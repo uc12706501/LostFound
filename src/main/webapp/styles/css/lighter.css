@@ -49,6 +49,20 @@ body,h1,h2,h3,h4,h5,h6 {
 	font-size: 80px;
 }
 
+.btn-small {
+	background-color: #777777;
+	border: none;
+	border-radius: 50%;
+	height: 80px;
+	margin: 40px auto;
+	width: 80px;
+}
+
+.icon-small {
+	color: white;
+	font-size: 40px;
+}
+
 .container {
 	max-width: 900px;
 }
@@ -349,7 +363,7 @@ img.full {
 	overflow: hidden;
 }
 
-.container-nopadding{
+.container-nopadding {
 	padding-left: 0;
 	padding-right: 0;
 }
