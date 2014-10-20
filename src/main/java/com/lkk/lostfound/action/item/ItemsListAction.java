@@ -25,7 +25,7 @@ public class ItemsListAction extends ActionSupport {
 
 	private String clazz;
 	protected int pageIndex = 1;
-	public static final int PAGE_SIZE = 1;
+	public static final int PAGE_SIZE = 9;
 	protected String filter;
 
 	public void prepare() throws Exception {
