@@ -81,7 +81,7 @@
 	<div class="container-about">
 		<div class="container">
 			<div class="row about">
-				<div class="col-xs-6 6text-center">
+				<div class="col-xs-6">
 					<div class="row">
 						<div class="col-sm-6">
 							教务处<br> 后勤管理处<br> 计算机科学与技术学院<br> 校党委学生处
