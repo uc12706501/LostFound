@@ -20,7 +20,6 @@
 <div class="well">
 	<s:form theme="simple" action="saveLostItem" namespace="/item"
 		method="post" cssClass="form-horizontal" enctype="multipart/form-data">
-		<fieldset>
 			<legend class="text-center header">失物详情</legend>
 			<div class="form-group">
 				<label class="col-md-2 control-label">失物名称</label>
@@ -124,7 +123,6 @@
 					<input class="btn btn-success" type="submit" value="提交" />
 				</div>
 			</div>
-		</fieldset>
 	</s:form>
 </div>
 

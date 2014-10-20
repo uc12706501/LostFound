@@ -20,7 +20,6 @@
 <div class="well">
 	<s:form theme="simple" action="savePickedItem" namespace="/item"
 		method="post" cssClass="form-horizontal" enctype="multipart/form-data">
-		<fieldset>
 			<legend class="text-center header">招领详情</legend>
 			<div class="form-group">
 				<label class="col-md-2 control-label">招领物品名称</label>
@@ -124,7 +123,6 @@
 					<input class="btn btn-success" type="submit" value="提交" />
 				</div>
 			</div>
-		</fieldset>
 	</s:form>
 </div>
 
