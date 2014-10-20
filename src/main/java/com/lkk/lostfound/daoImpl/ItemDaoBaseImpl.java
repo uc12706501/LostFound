@@ -40,8 +40,8 @@ public abstract class ItemDaoBaseImpl<T extends ItemBase> extends
 	}
 
 	public List<T> findByUser(User user) {
-		String query = String.format("from %s where User.id='%s'",
-				getEntityClass(), user.getId());
+		String query = String.format("from %s as i where i.publisher.id='%s'",
+				getEntityClassName(), user.getId());
 		return getHibernateTemplate().find(query);
 	}
 
